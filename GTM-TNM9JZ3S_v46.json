@@ -4348,7 +4348,46 @@
             {
                 "accountId": "6336855581",
                 "containerId": "242224888",
-                "tagId": "265",
+                "tagId": "276",
+                "name": "Google Tag - Base",
+                "type": "googtag",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "{{CONST - GA4 ID}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "configSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "server_container_url"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{CONST - Server URL}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "firingTriggerId": [
+                    "279"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "6336855581",
+                "containerId": "242224888",
+                "tagId": "277",
                 "name": "Meta Pixel - Base Code",
                 "type": "html",
                 "parameter": [
@@ -4366,7 +4405,7 @@
             {
                 "accountId": "6336855581",
                 "containerId": "242224888",
-                "tagId": "266",
+                "tagId": "278",
                 "name": "Data Tag - PageView",
                 "type": "cvt_MBTSV",
                 "parameter": [
@@ -4450,7 +4489,7 @@
             {
                 "accountId": "6336855581",
                 "containerId": "242224888",
-                "tagId": "267",
+                "tagId": "279",
                 "name": "Data Tag - ViewContent Home",
                 "type": "cvt_MBTSV",
                 "parameter": [
@@ -4549,7 +4588,7 @@
             {
                 "accountId": "6336855581",
                 "containerId": "242224888",
-                "tagId": "268",
+                "tagId": "280",
                 "name": "Data Tag - Purchase Presupuesto",
                 "type": "cvt_MBTSV",
                 "parameter": [
@@ -4663,7 +4702,7 @@
             {
                 "accountId": "6336855581",
                 "containerId": "242224888",
-                "tagId": "269",
+                "tagId": "281",
                 "name": "Data Tag - Purchase WhatsApp",
                 "type": "cvt_MBTSV",
                 "parameter": [
@@ -4777,7 +4816,7 @@
             {
                 "accountId": "6336855581",
                 "containerId": "242224888",
-                "tagId": "270",
+                "tagId": "282",
                 "name": "Data Tag - Segment Click",
                 "type": "cvt_MBTSV",
                 "parameter": [
@@ -4876,7 +4915,7 @@
             {
                 "accountId": "6336855581",
                 "containerId": "242224888",
-                "tagId": "271",
+                "tagId": "283",
                 "name": "Data Tag - CTA Click",
                 "type": "cvt_MBTSV",
                 "parameter": [
@@ -4960,7 +4999,7 @@
             {
                 "accountId": "6336855581",
                 "containerId": "242224888",
-                "tagId": "272",
+                "tagId": "284",
                 "name": "Data Tag - Section View",
                 "type": "cvt_MBTSV",
                 "parameter": [
@@ -5059,7 +5098,7 @@
             {
                 "accountId": "6336855581",
                 "containerId": "242224888",
-                "tagId": "273",
+                "tagId": "285",
                 "name": "Data Tag - Scroll",
                 "type": "cvt_MBTSV",
                 "parameter": [
@@ -5158,7 +5197,7 @@
             {
                 "accountId": "6336855581",
                 "containerId": "242224888",
-                "tagId": "274",
+                "tagId": "286",
                 "name": "Data Tag - Video Start",
                 "type": "cvt_MBTSV",
                 "parameter": [
@@ -5257,7 +5296,7 @@
             {
                 "accountId": "6336855581",
                 "containerId": "242224888",
-                "tagId": "275",
+                "tagId": "287",
                 "name": "Data Tag - Video Progress",
                 "type": "cvt_MBTSV",
                 "parameter": [
@@ -5371,7 +5410,7 @@
             {
                 "accountId": "6336855581",
                 "containerId": "242224888",
-                "tagId": "276",
+                "tagId": "288",
                 "name": "Google Tag - Base",
                 "type": "googtag",
                 "parameter": [
@@ -5917,7 +5956,7 @@
                 "type": "CLICK",
                 "filter": [
                     {
-                        "type": "MATCHES_CSS_SELECTOR",
+                        "type": "CSS_SELECTOR",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
@@ -5941,7 +5980,7 @@
                 "type": "CLICK",
                 "filter": [
                     {
-                        "type": "MATCHES_CSS_SELECTOR",
+                        "type": "CSS_SELECTOR",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
