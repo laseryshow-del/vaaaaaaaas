@@ -1,0 +1,600 @@
+CONFIGURACION COMPLETA GTM
+laserman.com.ar
+Data Tag + Data Client + Meta Pixel + Meta CAPI
+ARQUITECTURA
+El flujo de datos es:
+NAVEGADOR:  Meta Pixel ---> META (browser, eventID: xxx)
+            Data Tag  ---> marremix.laserman.com.ar/data
+SERVIDOR:   Data Client recibe ---> Meta CAPI ---> META (server, event_id: xxx)
+META:       browser xxx == server xxx ---> DEDUP OK
+
+Para GA4 (analytics separado):
+NAVEGADOR:  Google Tag ---> marremix.laserman.com.ar/g/collect
+SERVIDOR:   GA4 Client recibe ---> GA4 tag ---> Google Analytics
+
+PARTE 1: SERVER CONTAINER (GTM-T2ZQP7WV)
+Hacer TODO esto en el container SERVER de GTM.
+PASO 1: Instalar Templates
+Ir a Templates:
+a) En 'Plantillas de etiquetas' > Buscar en la galeria > buscar 'Facebook Conversions API' de stape-io > Anadir
+b) En 'Plantillas de clientes' > Buscar en la galeria > buscar 'Data Client' de stape-io > Anadir
+PASO 2: Crear Clients
+Client 1: Stape Data Client
+Campo
+Valor
+Tipo
+Data Client (Stape)
+Nombre
+Stape Data Client
+Response Body
+timestamp (por defecto)
+
+Client 2: GA4 Client
+Campo
+Valor
+Tipo
+Google Analytics: GA4
+Nombre
+GA4 Client
+
+PASO 3: Crear Variables
+Todas son tipo 'Event Data' (disponible despues de instalar los templates):
+Nombre
+Tipo
+Key Path
+ED - event_id
+Event Data
+event_id
+ED - em
+Event Data
+em
+ED - ph
+Event Data
+ph
+ED - fn
+Event Data
+fn
+ED - value
+Event Data
+value
+ED - currency
+Event Data
+currency
+ED - content_name
+Event Data
+content_name
+ED - content_type
+Event Data
+content_type
+ED - segment_name
+Event Data
+segment_name
+ED - section_id
+Event Data
+section_id
+ED - video_title
+Event Data
+video_title
+ED - video_percent
+Event Data
+video_percent
+ED - page_location
+Event Data
+page_location
+
+Variables de Cookie (tipo '1st Party Cookie'):
+Nombre
+Tipo
+Cookie Name
+Cookie - _fbp
+1st Party Cookie
+_fbp
+Cookie - _fbc
+1st Party Cookie
+_fbc
+
+Variables Constantes:
+Nombre
+Tipo
+Valor
+CONST - FB Pixel ID
+Constant
+25699472449663830
+CONST - FB API Token
+Constant
+(tu Access Token de Meta)
+
+
+PASO 4: Crear Triggers
+Todos tipo 'Custom Event'. Usar regex matching: NO
+Nombre del trigger
+Event Name (exacto)
+CE - page_view
+page_view
+CE - view_content_home
+view_content_home
+CE - purchase_presupuesto
+purchase_presupuesto
+CE - purchase_whatsapp
+purchase_whatsapp
+CE - click_segment
+click_segment
+CE - click_cta
+click_cta
+CE - section_view
+section_view
+CE - scroll
+scroll
+CE - video_start
+video_start
+CE - video_progress
+video_progress
+
+PASO 5: Crear Tags Meta CAPI
+Todos tipo 'Facebook Conversions API' (template de Stape). Configuracion comun para TODOS:
+Campo
+Valor
+API Access Token
+{{CONST - FB API Token}}
+Pixel ID
+{{CONST - FB Pixel ID}}
+Event Name Setup Method
+Override
+Action Source
+website
+Use Optimistic Scenario
+SI (activar)
+Enable Event Enhancement
+SI (activar)
+
+Server Event Data Override (agregar en TODOS):
+Property Name
+Property Value
+event_id
+{{ED - event_id}}
+
+User Data (agregar en TODOS):
+Field
+Value
+em
+{{ED - em}}
+ph
+{{ED - ph}}
+fn
+{{ED - fn}}
+fbp
+{{Cookie - _fbp}}
+fbc
+{{Cookie - _fbc}}
+
+
+Tag 1: Meta CAPI - PageView
+Campo
+Valor
+Nombre
+Meta CAPI - PageView
+Event Type
+PageView
+Trigger
+CE - page_view
+
+Tag 2: Meta CAPI - ViewContent Home
+Campo
+Valor
+Nombre
+Meta CAPI - ViewContent Home
+Event Type
+ViewContent
+Trigger
+CE - view_content_home
+Custom Data: content_name
+{{ED - content_name}}
+
+Tag 3: Meta CAPI - Purchase Presupuesto
+Campo
+Valor
+Nombre
+Meta CAPI - Purchase Presupuesto
+Event Type
+Purchase
+Trigger
+CE - purchase_presupuesto
+Custom Data: value
+{{ED - value}}
+Custom Data: currency
+{{ED - currency}}
+
+Tag 4: Meta CAPI - Purchase WhatsApp
+Campo
+Valor
+Nombre
+Meta CAPI - Purchase WhatsApp
+Event Type
+Purchase
+Trigger
+CE - purchase_whatsapp
+Custom Data: value
+{{ED - value}}
+Custom Data: currency
+{{ED - currency}}
+
+Tag 5: Meta CAPI - Segment Click
+Campo
+Valor
+Nombre
+Meta CAPI - Segment Click
+Event Type
+Custom: click_segment
+Trigger
+CE - click_segment
+Custom Data: segment_name
+{{ED - segment_name}}
+
+Tag 6: Meta CAPI - Section View
+Campo
+Valor
+Nombre
+Meta CAPI - Section View
+Event Type
+ViewContent
+Trigger
+CE - section_view
+Custom Data: content_name
+{{ED - content_name}}
+Custom Data: section_id
+{{ED - section_id}}
+
+Tag 7: Meta CAPI - CTA Click
+Campo
+Valor
+Nombre
+Meta CAPI - CTA Click
+Event Type
+Custom: click_cta
+Trigger
+CE - click_cta
+
+Tag 8: Meta CAPI - Scroll
+Campo
+Valor
+Nombre
+Meta CAPI - Scroll
+Event Type
+Custom: scroll
+Trigger
+CE - scroll
+
+Tag 9: Meta CAPI - Video Start
+Campo
+Valor
+Nombre
+Meta CAPI - Video Start
+Event Type
+Custom: video_start
+Trigger
+CE - video_start
+Custom Data: video_title
+{{ED - video_title}}
+
+Tag 10: Meta CAPI - Video Progress
+Campo
+Valor
+Nombre
+Meta CAPI - Video Progress
+Event Type
+Custom: video_progress
+Trigger
+CE - video_progress
+Custom Data: video_percent
+{{ED - video_percent}}
+Custom Data: video_title
+{{ED - video_title}}
+
+
+PARTE 2: WEB CONTAINER (GTM-TNM9JZ3S)
+Hacer TODO esto en el container WEB de GTM.
+PASO 1: Variables
+Variable 1: Unique Event ID
+Campo
+Valor
+Tipo
+Unique Event ID (template Stape de la galeria)
+Nombre
+Unique Event ID
+
+Variables DataLayer (tipo 'Data Layer Variable', Version 2):
+Nombre
+Data Layer Variable Name
+DLV - em
+em
+DLV - ph
+ph
+DLV - fn
+fn
+DLV - value
+value
+DLV - currency
+currency
+DLV - content_name
+content_name
+DLV - content_type
+content_type
+DLV - segment_name
+segment_name
+DLV - section_id
+section_id
+DLV - video_title
+video_title
+DLV - video_percent
+video_percent
+
+Variables Cookie (tipo '1st Party Cookie'):
+Nombre
+Cookie Name
+Cookie - _fbp
+_fbp
+Cookie - _fbc
+_fbc
+
+Variables Constantes:
+Nombre
+Valor
+CONST - FB Pixel ID
+25699472449663830
+CONST - Server URL
+https://marremix.laserman.com.ar
+CONST - GA4 ID
+G-J4JTN4JRE0
+
+Click Element - data-segment
+Campo
+Valor
+Tipo
+Auto-Event Variable
+Variable Type
+Element Attribute
+Attribute Name
+data-segment
+
+
+PASO 2: Triggers
+Nombre
+Tipo
+Condicion
+All Pages
+Page View (built-in)
+Todas las paginas
+CE - view_content_home
+Custom Event
+event = view_content_home
+CE - purchase_presupuesto
+Custom Event
+event = purchase_presupuesto
+CE - purchase_whatsapp
+Custom Event
+event = purchase_whatsapp
+Click - Segment Buttons
+Click - All Elements
+Click Element matches CSS: [data-segment]
+Click - CTA Buttons
+Click - All Elements
+Click Element matches CSS: a[href*='wa.me'], a[href='#contacto']
+Visibility - Section
+Element Visibility
+Selection: CSS selector, Selector: section[data-section]
+Scroll 25/50/75/90%
+Scroll Depth
+Vertical, Percentages: 25/50/75/90
+YouTube - Video Start
+YouTube Video
+Start
+YouTube - Video Progress
+YouTube Video
+Progress 25,50,75,100
+
+
+PASO 3: Tag - Meta Pixel Base
+Campo
+Valor
+Tipo
+Custom HTML
+Nombre
+Meta Pixel - Base Code
+Trigger
+All Pages
+
+HTML:
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){
+n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+t=b.createElement(e);t.async=!0;t.src=v;
+s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
+}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '{{CONST - FB Pixel ID}}');
+fbq('track', 'PageView', {}, {eventID: '{{Unique Event ID}}'});
+</script>
+
+PASO 4: Data Tags (uno por evento)
+Todos tipo 'Data Tag' (template Stape). Configuracion comun:
+Campo
+Valor
+GTM Server Side URL
+{{CONST - Server URL}}
+Send all from DataLayer
+SI (activar)
+Send common data
+SI (activar)
+
+
+Event Data comun para TODOS los Data Tags:
+Nombre
+Valor
+event_id
+{{Unique Event ID}}
+_fbp
+{{Cookie - _fbp}}
+_fbc
+{{Cookie - _fbc}}
+
+
+Data Tag 1: PageView
+Campo
+Valor
+Nombre
+Data Tag - PageView
+Event Name
+page_view
+Trigger
+All Pages
+
+Data Tag 2: View Content Home
+Campo
+Valor
+Nombre
+Data Tag - ViewContent Home
+Event Name
+view_content_home
+Trigger
+CE - view_content_home
+Event Data extra: content_name
+{{DLV - content_name}}
+
+Data Tag 3: Purchase Presupuesto
+Campo
+Valor
+Nombre
+Data Tag - Purchase Presupuesto
+Event Name
+purchase_presupuesto
+Trigger
+CE - purchase_presupuesto
+Event Data extra: value
+{{DLV - value}}
+Event Data extra: currency
+{{DLV - currency}}
+
+Data Tag 4: Purchase WhatsApp
+Campo
+Valor
+Nombre
+Data Tag - Purchase WhatsApp
+Event Name
+purchase_whatsapp
+Trigger
+CE - purchase_whatsapp
+Event Data extra: value
+1000
+Event Data extra: currency
+ARS
+
+Data Tag 5: Segment Click
+Campo
+Valor
+Nombre
+Data Tag - Segment Click
+Event Name
+click_segment
+Trigger
+Click - Segment Buttons
+Event Data extra: segment_name
+{{Click Element - data-segment}}
+
+Data Tag 6: CTA Click
+Campo
+Valor
+Nombre
+Data Tag - CTA Click
+Event Name
+click_cta
+Trigger
+Click - CTA Buttons
+
+Data Tag 7: Section View
+Campo
+Valor
+Nombre
+Data Tag - Section View
+Event Name
+section_view
+Trigger
+Visibility - Section
+Event Data extra: section_id
+{{Element Visibility - Element ID}}
+
+Data Tag 8: Scroll
+Campo
+Valor
+Nombre
+Data Tag - Scroll 25%
+Event Name
+scroll
+Trigger
+Scroll 25%
+Event Data extra: percent
+25
+
+Repetir para 50%, 75%, 90% con sus triggers correspondientes. O crear 1 solo Data Tag con los 4 triggers de scroll.
+Data Tag 9: Video Start
+Campo
+Valor
+Nombre
+Data Tag - Video Start
+Event Name
+video_start
+Trigger
+YouTube - Video Start
+Event Data extra: video_title
+{{DLV - video_title}}
+
+Data Tag 10: Video Progress
+Campo
+Valor
+Nombre
+Data Tag - Video Progress
+Event Name
+video_progress
+Trigger
+YouTube - Video Progress
+Event Data extra: video_percent
+{{DLV - video_percent}}
+Event Data extra: video_title
+{{DLV - video_title}}
+
+
+PASO 5: Google Tag (GA4 - separado de Meta)
+Campo
+Valor
+Tipo
+Google Tag
+Nombre
+Google Tag - Base
+Tag ID
+{{CONST - GA4 ID}}
+Config: server_container_url
+{{CONST - Server URL}}
+Trigger
+Initialization - All Pages
+
+
+ Lo que quiero esPARTE 3: VERIFICACION
+Orden de publicacion
+1. Publicar SERVER container primero
+2. Publicar WEB container despues
+3. Abrir laserman.com.ar en modo incognito
+4. Abrir Meta Events Manager > Probar eventos
+5. Navegar el sitio, hacer click en botones, ver videos
+6. Verificar en Meta que cada evento tiene:
+   - Version 'Navegador' con un Identificador del evento
+   - Version 'Servidor' con el MISMO Identificador del evento
+7. Si los IDs coinciden, la deduplicacion funciona
+Debugging
+a) GTM Web Preview: verificar que Meta Pixel Y Data Tag disparan en cada evento
+b) GTM Server Preview: verificar que Data Client recibe los requests y Meta CAPI dispara
+c) Meta Events Manager > Probar eventos: verificar event_id iguales
+d) Si Data Tag no llega al server: verificar URL = https://marremix.laserman.com.ar
+REGLA DE ORO
+Cada evento del sitio necesita EXACTAMENTE 2 tags en el web container disparando en el MISMO trigger:
+1. Meta Pixel (browser) con eventID = {{Unique Event ID}}
+2. Data Tag (server) con event_id = {{Unique Event ID}}
+Ambos con el MISMO Unique Event ID garantiza la deduplicacion.
