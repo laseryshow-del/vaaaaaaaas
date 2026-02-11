@@ -2072,7 +2072,7 @@
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
-                        "type": "MATCHES_REGEX",
+                        "type": "EQUALS",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
@@ -2082,7 +2082,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "^page_view$"
+                                "value": "page_view"
                             }
                         ]
                     }
@@ -2147,7 +2147,7 @@
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
-                        "type": "MATCHES_REGEX",
+                        "type": "EQUALS",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
@@ -2157,7 +2157,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "^purchase_presupuesto$"
+                                "value": "purchase_presupuesto"
                             }
                         ]
                     }
@@ -2197,7 +2197,7 @@
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
-                        "type": "MATCHES_REGEX",
+                        "type": "EQUALS",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
@@ -2207,7 +2207,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "^view_content_home$"
+                                "value": "view_content_home"
                             }
                         ]
                     }
@@ -2247,7 +2247,7 @@
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
-                        "type": "MATCHES_REGEX",
+                        "type": "EQUALS",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
@@ -2257,7 +2257,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "^video_progress$"
+                                "value": "video_progress"
                             }
                         ]
                     }
@@ -2297,7 +2297,7 @@
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
-                        "type": "MATCHES_REGEX",
+                        "type": "EQUALS",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
@@ -2307,7 +2307,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "^section_view$"
+                                "value": "section_view"
                             }
                         ]
                     }
@@ -2599,7 +2599,7 @@
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
-                        "type": "MATCHES_REGEX",
+                        "type": "EQUALS",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
@@ -2609,7 +2609,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "^purchase_whatsapp$"
+                                "value": "purchase_whatsapp"
                             }
                         ]
                     }
@@ -2623,7 +2623,7 @@
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
-                        "type": "MATCHES_REGEX",
+                        "type": "EQUALS",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
@@ -2633,7 +2633,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "^click_segment$"
+                                "value": "click_segment"
                             }
                         ]
                     }
@@ -2647,7 +2647,7 @@
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
-                        "type": "MATCHES_REGEX",
+                        "type": "EQUALS",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
@@ -2657,7 +2657,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "^click_cta$"
+                                "value": "click_cta"
                             }
                         ]
                     }
@@ -2671,7 +2671,7 @@
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
-                        "type": "MATCHES_REGEX",
+                        "type": "EQUALS",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
@@ -2681,7 +2681,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "^scroll$"
+                                "value": "scroll"
                             }
                         ]
                     }
@@ -2695,7 +2695,7 @@
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
-                        "type": "MATCHES_REGEX",
+                        "type": "EQUALS",
                         "parameter": [
                             {
                                 "type": "TEMPLATE",
@@ -2705,7 +2705,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "^video_start$"
+                                "value": "video_start"
                             }
                         ]
                     }
