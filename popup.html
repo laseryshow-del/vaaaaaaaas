@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maps Data Extractor</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📍 Maps Extractor</h1>
+      <p class="subtitle">Extrae datos de búsquedas en Google Maps</p>
+    </header>
+
+    <div id="not-maps-warning" class="warning hidden">
+      ⚠️ Abre Google Maps y realiza una búsqueda antes de usar el extractor.
+    </div>
+
+    <div class="controls">
+      <button id="btn-extract" class="btn btn-primary">
+        ▶ Extraer Datos
+      </button>
+      <button id="btn-stop" class="btn btn-danger hidden">
+        ⏹ Detener
+      </button>
+    </div>
+
+    <div id="progress-section" class="hidden">
+      <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <p id="progress-text" class="progress-text">Preparando...</p>
+    </div>
+
+    <div id="log-section" class="hidden">
+      <div id="log-container" class="log-container">
+        <p id="log-text" class="log-text"></p>
+      </div>
+    </div>
+
+    <div id="results-section" class="hidden">
+      <div class="results-header">
+        <h2>Resultados: <span id="results-count">0</span></h2>
+        <div class="export-buttons">
+          <button id="btn-csv" class="btn btn-small btn-export">📄 CSV</button>
+          <button id="btn-json" class="btn btn-small btn-export">📋 JSON</button>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table id="results-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Dirección</th>
+              <th>Ciudad</th>
+              <th>Provincia</th>
+              <th>Teléfono</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody id="results-body">
+          </tbody>
+        </table>
+      </div>
+
+      <button id="btn-clear" class="btn btn-small btn-clear">🗑 Limpiar</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
