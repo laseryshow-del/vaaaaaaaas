@@ -646,7 +646,7 @@
               "name": "¿Viajan a cualquier provincia de Argentina?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Sí. DK Laserman Pro sale desde Neuquén Capital y trabaja en todo el país. El traslado se cotiza por separado según la distancia, e incluye comida, estadía y viáticos para 2 personas a cargo del contratante."
+                "text": "Sí. DK Laserman Pro sale desde Neuquén Capital y trabaja en todo el país. El traslado, el combustible y la estadía del equipo van sin cargo: ya están incluidos en los valores del presupuesto."
               }
             },
             {
@@ -699,7 +699,7 @@
                 <li><strong>Proyección monumental interactiva (por hora)</strong> — $ 660.000.</li>
                 <li><strong>Mapping arquitectónico</strong> — $ 360.000. Pieza audiovisual diseñada para un edificio emblemático.</li>
             </ul>
-            <p class="prose"><strong>Descuento combo:</strong> 10% OFF al contratar 3 o más servicios. Traslado desde Neuquén Capital a cotizar según distancia.</p>
+            <p class="prose"><strong>Descuento combo:</strong> 10% OFF al contratar 3 o más servicios. Traslado, combustible y estadía del equipo sin cargo, incluidos en el presupuesto.</p>
 
             <h2 class="display" style="font-size:1.3rem;margin-top:40px">Preguntas frecuentes</h2>
             <h3 style="font-size:1rem">¿Cuánto cuesta un show láser para un aniversario de ciudad?</h3>
@@ -709,7 +709,7 @@
             <h3 style="font-size:1rem">¿Usa pirotecnia?</h3>
             <p class="prose">No. Es tecnología láser limpia: sin pirotecnia, sin estruendos ni residuos. Segura para familias y mascotas.</p>
             <h3 style="font-size:1rem">¿Viajan a cualquier provincia?</h3>
-            <p class="prose">Sí, a todo el país. Salimos desde Neuquén Capital y el traslado se cotiza según la distancia.</p>
+            <p class="prose">Sí, a todo el país. Salimos desde Neuquén Capital y el traslado, el combustible y la estadía del equipo van sin cargo, incluidos en el presupuesto.</p>
 
             <h2 class="display" style="font-size:1.3rem;margin-top:40px">Contacto</h2>
             <p class="prose">
@@ -894,9 +894,9 @@
                 origin: "Neuquén Capital",
                 destination: CONFIG.distanciaKm === "A confirmar" ? "A confirmar" : CONFIG.location,
                 distance: CONFIG.distanciaKm,
-                total: CONFIG.costoTraslado,
-                isQuote: CONFIG.costoTraslado === "A cotizar",
-                note: "Solo ida"
+                total: "Sin cargo",
+                isQuote: false,
+                note: "Incluido en el presupuesto"
             },
             whyChooseUs: {
                 title: "¿Por qué LASERMAN?",
@@ -935,7 +935,7 @@
                         "Presupuesto válido por 15 días desde la fecha de emisión.",
                         "Se requiere un adelanto del 50% para confirmar la fecha y comenzar personalización.",
                         "Saldo a pagar antes del inicio del evento.",
-                        "Gastos de comida, estadía y viáticos para 2 personas desde Neuquén a cargo del contratante.",
+                        "Traslado, combustible y estadía del equipo: SIN CARGO. Ya están incluidos en los valores del presente presupuesto.",
                         "Incluye diseño personalizado de show, montaje y desmontaje.",
                         "Equipos certificados para operar en exteriores.",
                         "En caso de condiciones climáticas adversas, se evaluará reprogramación con flexibilidad.",
@@ -1318,9 +1318,9 @@
                         ))}
                     </div>
                     <div className="log-total">
-                        <span className="label">Estimación de combustible — total ida</span>
+                        <span className="label">Traslado, combustible y estadía</span>
                         <span className="led-dots"></span>
-                        <span className="amt">{data.isQuote ? "A cotizar" : <PriceCounter price={data.total} />}</span>
+                        <span className="amt">SIN CARGO</span>
                     </div>
                 </section>
             );
@@ -1471,7 +1471,7 @@
                     </Band>
 
                     <div className="panel">
-                        <SectionHead idx="B" title="Traslado" count="Neuquén → Destino" />
+                        <SectionHead idx="B" title="Traslado" count="Sin cargo" />
                         <Logistics data={QUOTE_DATA.transport} />
 
                         <SectionHead idx="C" title="Fundamentos" count="Por qué LASERMAN" />
