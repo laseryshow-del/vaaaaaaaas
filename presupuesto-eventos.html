@@ -799,9 +799,12 @@
                     specs: [
                         ["Duración", "11 minutos de show en vivo"],
                         ["Fuente", "Láser verde de 10 W"],
+                        ["Escáneres", "55 Kpps"],
                         ["Control", "Manipulación en vivo, operación en tiempo real (ILDA)"],
+                        ["Atmósfera", "10 hazers Ampro Neo Steam Faze de 1.000 W (al aire libre)"],
                         ["Montaje / desmontaje", "A cargo de DK Laserman"],
-                        ["Alimentación", "220 V — a confirmar según sede"],
+                        ["Consumo eléctrico", "≈ 200 W el láser + 10.000 W los hazers ≈ 10,2 kW"],
+                        ["Requerimiento", "220 V con puesta a tierra · 50 A totales (o grupo electrógeno)"],
                         ["Seguridad", "Sin pirotecnia, sin humo pesado, sin estruendos"]
                     ],
                     options: [{ label: "Show Completo (11 min)", price: "$ 2.350.000" }]
@@ -825,7 +828,10 @@
                         ["Color", "Verde monocromo o RGB full color"],
                         ["Estructura", "Sin andamios ni estructura fija"],
                         ["Emplazamiento", "Ingreso al predio, exterior o interior"],
-                        ["Alimentación", "220 V — a confirmar según sede"],
+                        ["Escáneres", "55 Kpps"],
+                        ["Atmósfera", "4 hazers Ampro Neo Steam Faze de 1.000 W cada 20 m"],
+                        ["Consumo eléctrico", "Túnel de 20 m: ≈ 4,2 kW (láser + 4 hazers de 1.000 W)"],
+                        ["Requerimiento", "220 V con puesta a tierra · 20 A cada 20 m de túnel"],
                         ["Seguridad", "Haces por encima de la línea de paso, Clase profesional"]
                     ],
                     note: "A partir de 3 horas, 30% OFF en cada hora adicional"
@@ -847,7 +853,7 @@
                         ["Superficie", "Fachadas y edificios de la ciudad"],
                         ["Unidad de contratación", "Por hora de proyección"],
                         ["Contenido", "Anuncio del evento y sponsors"],
-                        ["Alimentación", "220 V — a confirmar según sede"],
+                        ["Requerimiento", "1 toma de 220 V · 10 A con puesta a tierra en el punto de tiro"],
                         ["Distancia de tiro", "A confirmar según relevamiento"]
                     ],
                     note: "30% OFF en horas adicionales (+3hs)"
@@ -864,7 +870,7 @@
                         ["Producción", "Pieza audiovisual diseñada a medida"],
                         ["Superficie", "Un edificio emblemático"],
                         ["Relevamiento", "Previo, sobre la fachada real"],
-                        ["Alimentación", "220 V — a confirmar según sede"],
+                        ["Requerimiento", "1 toma de 220 V · 10 A con puesta a tierra en el punto de tiro"],
                         ["Distancia de tiro", "A confirmar según relevamiento"]
                     ],
                     options: [{ label: "Mapping sobre un edificio", price: "$ 360.000", details: "Pieza diseñada a medida para esa fachada" }]
@@ -880,9 +886,12 @@
                     specs: [
                         ["Emplazamiento", "Sobre escenario, proyección frontal hacia el público"],
                         ["Fuente", "Láser RGB full color, 10 W / 20 W / 30 W"],
+                        ["Escáneres", "55 Kpps"],
                         ["Control", "Sincronizado con la música, operación en vivo"],
+                        ["Atmósfera", "Hazers Ampro Neo Steam Faze de 1.000 W según predio"],
                         ["Cobertura", "Según potencia contratada y tamaño del predio"],
-                        ["Alimentación", "220 V — a confirmar según sede"],
+                        ["Consumo eléctrico", "10 W ≈ 200 W · 20 W ≈ 350 W · 30 W ≈ 600 W"],
+                        ["Requerimiento", "220 V · 10 A (10 W y 20 W) — 16 A para el de 30 W"],
                         ["Seguridad", "Haces por encima de la línea del público"]
                     ],
                     includes: "Incluye: montaje sobre escenario · operación técnica en vivo · programación sincronizada con el line-up · desmontaje.",
@@ -1432,6 +1441,12 @@
                             <div className="included">
                                 <span className="label">Incluido en todos los servicios</span>
                                 <p>Traslado, combustible y estadía del equipo <strong>sin cargo</strong>, a cualquier punto del país. El valor de cada ítem es el valor final.</p>
+                            </div>
+                            <div className="included">
+                                <span className="label">Requerimiento eléctrico</span>
+                                <p>Todos los equipos trabajan con <strong>220 V · 50 Hz</strong> y puesta a tierra, y funcionan sin problemas con grupo electrógeno.</p>
+                                <p>El láser en sí consume muy poco: un equipo de 10 W son unos <strong>200 W</strong> — menos que una notebook con su cargador. El consumo real lo ponen las máquinas de humo, necesarias para que el haz se vea en el aire: cada hazer Ampro Neo Steam Faze son 1.000 W.</p>
+                                <p><strong>Show Laserman al aire libre:</strong> 10 hazers + láser ≈ <strong>10,2 kW</strong> (50 A). <strong>Túnel de 20 m:</strong> 4 hazers + láser ≈ <strong>4,2 kW</strong> (20 A). <strong>Láser de escenario:</strong> 200 W el de 10 W, 350 W el de 20 W y 600 W el de 30 W, más los hazers según el tamaño del predio.</p>
                             </div>
                         </main>
                     </div>
