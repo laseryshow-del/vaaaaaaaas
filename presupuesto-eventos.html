@@ -269,6 +269,12 @@
         .rgb-tag { display: inline-block; width: 34px; height: 6px; border-radius: 3px; margin-right: 9px; vertical-align: middle;
                    background: linear-gradient(90deg, #ff2d2d 0%, #21e35a 50%, #2d6bff 100%); }
 
+        /* ── Franja de "incluido" ── */
+        .included { margin-top: 46px; padding: 22px 24px; border: 1px solid rgba(255,255,255,.14); border-radius: 10px;
+                    background: rgba(255,255,255,.03); }
+        .included p { margin: 8px 0 0; font-size: .95rem; line-height: 1.55; }
+        .included strong { color: var(--laser); }
+
         /* ── Renglón de precio ── */
         .ledger { margin-top: 26px; border-top: 1px solid var(--rule); }
         .led-row { display: flex; align-items: flex-end; gap: 4px; padding: 15px 0 13px; border-bottom: 1px solid var(--rule-soft); transition: background .25s; }
@@ -738,8 +744,6 @@
             ciudad:          "",   // ← poner la ciudad acá personaliza el titular: "LA NOCHE QUE RUFINO VA A RECORDAR". Vacío = "SU CIUDAD".
             quoteId:         "DKL-000-26",
             fechaEvento:     "A confirmar",
-            distanciaKm:     "A confirmar",
-            costoTraslado:   "A cotizar",
         };
 
         // La PNG anterior (wp-content/uploads/2026/05/Logo-Laserman-01.png) devuelve 422:
@@ -890,14 +894,6 @@
                     note: "Se cotiza por noche de evento. Combinable con el Show Laserman en vivo."
                 }
             ],
-            transport: {
-                origin: "Neuquén Capital",
-                destination: CONFIG.distanciaKm === "A confirmar" ? "A confirmar" : CONFIG.location,
-                distance: CONFIG.distanciaKm,
-                total: "Sin cargo",
-                isQuote: false,
-                note: "Incluido en el presupuesto"
-            },
             whyChooseUs: {
                 title: "¿Por qué LASERMAN?",
                 paragraphs: [
@@ -1295,36 +1291,6 @@
             );
         };
 
-        /* ── Logística ── */
-        const Logistics = ({ data }) => {
-            const ref = useReveal();
-            const cells = [
-                { l: "Origen", v: data.origin },
-                { l: "Destino", v: data.destination },
-                { l: "Distancia", v: data.distance }
-            ];
-            return (
-                <section ref={ref} className="reveal logistics">
-                    <div className="log-head">
-                        <h3>Traslado y logística</h3>
-                        <span className="tag">{data.note}</span>
-                    </div>
-                    <div className="log-grid">
-                        {cells.map((c, i) => (
-                            <div className="log-cell" key={i}>
-                                <p className="label" style={{ margin: 0 }}>{c.l}</p>
-                                <p className="v" style={{ margin: 0 }}>{c.v}</p>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="log-total">
-                        <span className="label">Traslado, combustible y estadía</span>
-                        <span className="led-dots"></span>
-                        <span className="amt">SIN CARGO</span>
-                    </div>
-                </section>
-            );
-        };
 
         /* ── Argumento ── */
         const Argument = ({ whyData }) => {
@@ -1463,6 +1429,10 @@
                         <main>
                             <SectionHead idx="A" title="Propuesta de servicios" count={QUOTE_DATA.services.length + " ítems"} />
                             {QUOTE_DATA.services.map((s, i) => <Item key={s.id} service={s} delay={i * 60} />)}
+                            <div className="included">
+                                <span className="label">Incluido en todos los servicios</span>
+                                <p>Traslado, combustible y estadía del equipo <strong>sin cargo</strong>, a cualquier punto del país. El valor de cada ítem es el valor final.</p>
+                            </div>
                         </main>
                     </div>
 
@@ -1471,10 +1441,7 @@
                     </Band>
 
                     <div className="panel">
-                        <SectionHead idx="B" title="Traslado" count="Sin cargo" />
-                        <Logistics data={QUOTE_DATA.transport} />
-
-                        <SectionHead idx="C" title="Fundamentos" count="Por qué LASERMAN" />
+                        <SectionHead idx="B" title="Fundamentos" count="Por qué LASERMAN" />
                         <Argument whyData={QUOTE_DATA.whyChooseUs} />
                     </div>
 
@@ -1483,10 +1450,10 @@
                     </Band>
 
                     <div className="panel">
-                        <SectionHead idx="D" title={QUOTE_DATA.festivals.title} count={QUOTE_DATA.festivals.items.length + " fiestas nacionales"} />
+                        <SectionHead idx="C" title={QUOTE_DATA.festivals.title} count={QUOTE_DATA.festivals.items.length + " fiestas nacionales"} />
                         <TrackRecord festivalsData={QUOTE_DATA.festivals} />
 
-                        <SectionHead idx="E" title="Condiciones y contacto" count="Validez 15 días" />
+                        <SectionHead idx="D" title="Condiciones y contacto" count="Validez 15 días" />
                         <Terms footerData={QUOTE_DATA.footer} />
                     </div>
 
