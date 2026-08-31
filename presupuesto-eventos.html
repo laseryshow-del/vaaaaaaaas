@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WQD926FF');</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shows Láser para Fiestas y Aniversarios | DK Laserman Argentina</title>
+    <meta name="description" content="Show Laserman en vivo, túnel láser inmersivo, proyecciones monumentales y mapping para fiestas nacionales y aniversarios de ciudad. Presupuesto con precios y disponibilidad para todo el país." />
+    <meta name="keywords" content="show láser, laserman, túnel láser, mapping arquitectónico, proyecciones láser, fiesta nacional, aniversario de ciudad, espectáculo láser Argentina" />
+    <meta name="author" content="DK Laserman Pro" />
+    <link rel="canonical" href="https://www.laserman.com.ar/presupuesto-eventos/" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="geo.region" content="AR-Q" />
+    <meta name="geo.placename" content="Neuquén Capital" />
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta property="og:site_name" content="DK Laserman Pro" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:title" content="Shows Láser para Fiestas y Aniversarios | DK Laserman" />
+    <meta property="og:description" content="El único show de manipulación láser en vivo de Latinoamérica. Túneles inmersivos, mapping y proyecciones monumentales para municipios de toda la Argentina." />
+    <meta name="twitter:title" content="Shows Láser para Fiestas y Aniversarios | DK Laserman" />
+    <meta name="twitter:description" content="Show Laserman en vivo, túnel láser inmersivo y mapping para fiestas nacionales y aniversarios de ciudad." />
+    <meta property="og:image" content="https://laserman.com.ar/wp-content/uploads/2026/05/webp_fhd_1.jpg_202605141733.jpeg"/>
+    <meta property="og:image:width" content="1920"/>
+    <meta property="og:image:height" content="1080"/>
+    <meta property="og:url" content="https://www.laserman.com.ar/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://laserman.com.ar/wp-content/uploads/2026/05/webp_fhd_1.jpg_202605141733.jpeg"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://laserman.com.ar">
+    <link rel="dns-prefetch" href="https://img.youtube.com">
+    <link rel="preload" as="image" href="https://laserman.com.ar/wp-content/uploads/2026/04/Que_la_parte_de_atras_sea_como_la_segunda_foto__2k_delpmaspu-1-scaled.jpg" fetchpriority="high">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        :root {
+            /* Paleta unificada con laserman.com.ar — mismo verde, mismo fondo */
+            --ink:        #090f0a;
+            --ink-raise:  #18181b;
+            --rule:       rgba(230,235,230,0.10);
+            --rule-soft:  rgba(230,235,230,0.055);
+            --text:       #e6ebe6;
+            --muted:      rgba(230,235,230,0.46);
+            --faint:      rgba(230,235,230,0.28);
+            --laser:      #00ff1d;
+            --laser-dim:  rgba(0,255,29,0.55);
+            --amber:      #fbbf24;
+
+            --display: 'Unbounded', sans-serif;
+            --body:    'DM Sans', sans-serif;
+            --mono:    'IBM Plex Mono', ui-monospace, monospace;
+
+            --pad-x: clamp(20px, 5vw, 72px);
+            --gut:   clamp(24px, 4vw, 56px);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: var(--body);
+            background: var(--ink);
+            color: var(--text);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 300;
+        }
+        img { display: block; max-width: 100%; }
+        a { color: inherit; }
+        :focus-visible { outline: 2px solid var(--laser); outline-offset: 3px; }
+
+        /* ── Fondo: retícula técnica, sin blur ni partículas ── */
+        #grid-bg {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background-image:
+                linear-gradient(rgba(230,235,230,0.028) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(230,235,230,0.028) 1px, transparent 1px);
+            background-size: 80px 80px;
+            -webkit-mask-image: radial-gradient(ellipse 120% 70% at 50% 0%, #000 0%, transparent 78%);
+            mask-image: radial-gradient(ellipse 120% 70% at 50% 0%, #000 0%, transparent 78%);
+        }
+        #glow-top {
+            position: fixed; top: 0; left: 0; right: 0; height: 340px; z-index: 0; pointer-events: none;
+            background: linear-gradient(to bottom, rgba(0,255,29,0.055), transparent 100%);
+        }
+
+        .shell { position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; padding: 0 var(--pad-x); }
+
+        /* ── Barra de progreso ── */
+        #progress {
+            position: fixed; top: 0; left: 0; height: 2px; width: 0%;
+            background: var(--laser); z-index: 90;
+            box-shadow: 0 0 12px rgba(0,255,29,0.8);
+        }
+
+        /* ── Masthead ── */
+        .masthead {
+            position: sticky; top: 0; z-index: 80;
+            background: rgba(9,15,10,0.92);
+            border-bottom: 1px solid var(--rule);
+        }
+        @supports (backdrop-filter: blur(4px)) {
+            .masthead { background: rgba(9,15,10,0.78); backdrop-filter: blur(10px) saturate(1.2); }
+        }
+        .masthead-in {
+            max-width: 1240px; margin: 0 auto; padding: 12px var(--pad-x);
+            display: flex; align-items: center; justify-content: space-between; gap: 20px;
+        }
+        .masthead img { height: 40px; width: 65px; flex: 0 0 auto; }
+        .mast-meta { display: flex; align-items: center; gap: 18px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; }
+        .mast-meta .sep { width: 1px; height: 14px; background: var(--rule); }
+        .mast-id { color: var(--laser); font-weight: 600; }
+        .mast-date { color: var(--muted); }
+        @media (max-width: 560px) { .mast-date { display: none; } }
+
+        /* ── Tipografía de servicio ── */
+        .eyebrow {
+            font-family: var(--mono); font-size: 10.5px; font-weight: 500;
+            letter-spacing: 0.24em; text-transform: uppercase; color: var(--faint);
+        }
+        .eyebrow-laser { color: var(--laser-dim); }
+        .label {
+            font-family: var(--mono); font-size: 9.5px; font-weight: 500;
+            letter-spacing: 0.2em; text-transform: uppercase; color: var(--faint);
+        }
+        .display {
+            font-family: var(--display); text-transform: uppercase;
+            letter-spacing: -0.025em; line-height: 0.94; text-wrap: balance;
+        }
+        .prose { max-width: 66ch; line-height: 1.78; color: rgba(230,235,230,0.76); font-weight: 300; }
+
+        /* ── Reglas ── */
+        .rule { height: 1px; background: var(--rule); width: 100%; }
+        .rule-draw { transform: scaleX(0); transform-origin: left; transition: transform 0.9s cubic-bezier(.16,.84,.44,1); }
+        .reveal.is-in .rule-draw { transform: scaleX(1); }
+
+        /* ── Reveal ── */
+        .reveal { opacity: 0; transform: translateY(18px); transition: opacity .75s ease-out, transform .75s cubic-bezier(.16,.84,.44,1); }
+        .reveal.is-in { opacity: 1; transform: none; }
+
+        /* ── Motor de láser interactivo (mismo que laserman.com.ar) ──
+           Vectores 3D reales rotados por yaw/pitch, proyección en perspectiva,
+           rasterizados con mezcla aditiva. Sigue al mouse; el clic dispara un pulso. */
+        /* Capa fija detrás de TODO el documento: el scroll abre el abanico. */
+        .rig { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+        .rig canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+        /* Nada de velo global: los haces van a brillo pleno y son los PANELES
+           de contenido los que los tapan. Así el texto siempre cae sobre fondo
+           sólido y los láser se ven enteros en las franjas entre secciones. */
+
+        /* Panel de contenido: fondo sólido, tapa los haces. */
+        .panel {
+            position: relative; z-index: 1; background: var(--ink);
+            padding-inline: clamp(14px, 2.5vw, 34px);
+            margin-inline: clamp(-14px, -2.5vw, -34px);
+            box-shadow: 0 0 60px 30px var(--ink);
+        }
+
+        /* Franja de show: sin fondo, los haces se ven completos. */
+        .band {
+            position: relative; z-index: 1;
+            min-height: clamp(240px, 42vh, 400px);
+            display: flex; flex-direction: column; justify-content: center;
+            padding: clamp(30px, 5vw, 60px) 0;
+        }
+        .band .k {
+            font-family: var(--mono); font-size: 10px; letter-spacing: 0.26em;
+            text-transform: uppercase; color: var(--laser-dim); margin: 0 0 14px;
+        }
+        .band p.t {
+            font-family: var(--display); text-transform: uppercase;
+            font-size: clamp(1.15rem, 3.4vw, 2.4rem); line-height: 1.08;
+            letter-spacing: -0.02em; margin: 0; max-width: 18ch;
+            text-shadow: 0 2px 30px rgba(9,15,10,0.95), 0 0 60px rgba(9,15,10,0.9);
+        }
+        .band p.t em { color: var(--laser); font-style: normal; }
+
+        /* ── Hero ── */
+        .hero { padding: clamp(56px, 11vh, 130px) 0 clamp(40px, 7vh, 80px); position: relative; overflow: hidden; }
+        .hero > .reveal { position: relative; z-index: 1; }
+        /* Legibilidad local: sombra dura sobre los haces, sin apagarlos. */
+        .hero h1 { text-shadow: 0 4px 44px rgba(9,15,10,0.95), 0 0 90px rgba(9,15,10,0.85); }
+        .hero .eyebrow, .hero .prose { text-shadow: 0 2px 22px rgba(9,15,10,0.98), 0 0 44px rgba(9,15,10,0.9); }
+        .hero-body { background: linear-gradient(90deg, rgba(9,15,10,0.86), rgba(9,15,10,0.25) 82%, transparent); padding-block: 4px; }
+        .hero-hint { margin: 26px 0 0; font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--faint); }
+        .hero-hint b { color: var(--laser); font-weight: 600; }
+        @media (prefers-reduced-motion: reduce) { .hero-hint { display: none; } }
+        .hero h1 { margin: 22px 0 0; font-size: clamp(2.7rem, 9.5vw, 7.4rem); }
+        .hero h1 .ln2 { display: block; color: var(--laser); }
+        .hero-body { margin-top: clamp(28px, 4vw, 44px); padding-left: 22px; border-left: 2px solid var(--laser); }
+        .hero-body p { margin: 0; font-size: clamp(0.9rem, 1.55vw, 1.06rem); }
+        .scanline {
+            position: absolute; left: 0; right: 0; top: 0; height: 1px; pointer-events: none;
+            background: linear-gradient(90deg, transparent, var(--laser) 18%, var(--laser) 82%, transparent);
+            box-shadow: 0 0 22px 2px rgba(0,255,29,0.55);
+            opacity: 0; animation: scan 1.9s cubic-bezier(.5,0,.2,1) 0.35s 1 forwards;
+        }
+        @keyframes scan {
+            0%   { transform: translateY(0);    opacity: 0; }
+            12%  { opacity: 0.95; }
+            85%  { opacity: 0.5; }
+            100% { transform: translateY(430px); opacity: 0; }
+        }
+
+        /* ── Ficha de datos ── */
+        .spec {
+            display: grid; grid-template-columns: repeat(5, 1fr);
+            border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+        }
+        .spec-cell { padding: 18px 20px 18px 0; border-left: 1px solid var(--rule-soft); padding-left: 20px; }
+        .spec-cell:first-child { border-left: 0; padding-left: 0; }
+        .spec-cell .v { margin-top: 7px; font-size: 13.5px; font-weight: 500; color: var(--text); line-height: 1.4; }
+        @media (max-width: 900px) { .spec { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .spec-cell { border-left: 0; padding-left: 0; border-top: 1px solid var(--rule-soft); }
+            .spec-cell:nth-child(-n+2) { border-top: 0; }
+            .spec-cell:nth-child(even) { padding-left: 20px; border-left: 1px solid var(--rule-soft); }
+        }
+
+        /* ── Encabezado de sección ── */
+        .sec-head { display: flex; align-items: baseline; gap: 18px; padding-bottom: 14px; }
+        .sec-head h2 { margin: 0; font-family: var(--display); text-transform: uppercase; font-size: clamp(1rem, 2.1vw, 1.45rem); letter-spacing: 0.01em; }
+        .sec-head .idx { font-family: var(--mono); font-size: 11px; color: var(--laser); letter-spacing: 0.16em; }
+        .sec-head .spacer { flex: 1; }
+        .sec-head .count { font-family: var(--mono); font-size: 10.5px; color: var(--faint); letter-spacing: 0.16em; }
+
+        /* ── Ítem ── */
+        .item { padding: clamp(32px, 5vw, 56px) 0; border-top: 1px solid var(--rule); }
+        .item-top { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; }
+        .item-num { font-family: var(--display); font-size: clamp(1.6rem, 3.4vw, 2.5rem); color: var(--laser); line-height: 1; letter-spacing: -0.03em; }
+        .item h3 { margin: 0 0 20px; font-size: clamp(1.45rem, 4vw, 2.65rem); }
+        .item h3 .tail { color: var(--laser); }
+        .item-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: var(--gut); align-items: start; }
+        @media (max-width: 860px) { .item-grid { grid-template-columns: minmax(0, 1fr); gap: 26px; } }
+
+        .shot { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--ink-raise); border: 1px solid var(--rule); }
+        .shot img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.16,.84,.44,1), opacity .5s; opacity: 0.88; }
+        .shot:hover img { transform: scale(1.045); opacity: 1; }
+        .shot::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(9,15,10,0.62), transparent 46%); pointer-events: none; }
+        .shot .tick { position: absolute; top: 0; left: 0; width: 20px; height: 20px; border-top: 2px solid var(--laser); border-left: 2px solid var(--laser); z-index: 2; }
+        @media (max-width: 860px) { .shot { aspect-ratio: 16 / 10; } }
+
+        /* ── Tira de registro ── */
+        .strip-head { display: flex; align-items: baseline; justify-content: space-between; margin: 26px 0 10px; }
+        .strip { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: thin; min-width: 0; max-width: 100%; }
+        .strip::-webkit-scrollbar { height: 3px; }
+        .strip::-webkit-scrollbar-thumb { background: var(--rule); }
+        .frame { position: relative; flex: 0 0 auto; width: 78px; height: 78px; overflow: hidden; border: 1px solid var(--rule); background: var(--ink-raise); }
+        .frame img { width: 100%; height: 100%; object-fit: cover; opacity: 0.62; transition: opacity .3s, transform .5s; }
+        .frame:hover img { opacity: 1; transform: scale(1.06); }
+        .frame:hover { border-color: var(--laser-dim); }
+        .play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+        .play i { display: block; width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-left: 10px solid var(--laser); filter: drop-shadow(0 0 6px rgba(0,255,29,0.6)); }
+        @media (min-width: 768px) { .frame { width: 92px; height: 92px; } }
+
+        /* ── Ficha técnica ── */
+        .techspec { margin-top: 26px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.12); }
+        .tech-grid { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 26px; }
+        .tech-row { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+        .tech-row dt { font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; opacity: .55; }
+        .tech-row dd { margin: 0; font-size: .84rem; line-height: 1.45; }
+        @media (max-width: 620px) { .tech-grid { grid-template-columns: minmax(0, 1fr); } }
+        .rgb-tag { display: inline-block; width: 34px; height: 6px; border-radius: 3px; margin-right: 9px; vertical-align: middle;
+                   background: linear-gradient(90deg, #ff2d2d 0%, #21e35a 50%, #2d6bff 100%); }
+
+        /* ── Renglón de precio ── */
+        .ledger { margin-top: 26px; border-top: 1px solid var(--rule); }
+        .led-row { display: flex; align-items: flex-end; gap: 4px; padding: 15px 0 13px; border-bottom: 1px solid var(--rule-soft); transition: background .25s; }
+        .led-row:hover { background: rgba(0,255,29,0.028); }
+        .led-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); flex: 0 0 auto; max-width: 58%; }
+        .led-label .sub { display: block; margin-top: 4px; letter-spacing: 0.06em; text-transform: none; color: var(--faint); font-size: 10.5px; }
+        .led-dots { flex: 1 1 auto; border-bottom: 1px dotted rgba(230,235,230,0.2); margin: 0 14px 6px; min-width: 20px; }
+        .led-price { font-family: var(--display); font-size: clamp(1.15rem, 2.6vw, 1.7rem); color: var(--laser); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; flex: 0 0 auto; }
+        .led-note { margin: 14px 0 0; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; color: var(--laser-dim); text-transform: uppercase; }
+
+
+        /* Ninguna celda de grilla puede crecer mas alla del ancho disponible:
+           sin esto, el min-content de la tira de miniaturas estira la pagina
+           entera y el celular la muestra alejada. */
+        .item-grid > *, .argument > *, .terms > *, .record-list > *,
+        .spec > *, .log-grid > * { min-width: 0; }
+        .item-grid, .argument, .terms { max-width: 100%; }
+        /* ── Logística ── */
+        .logistics { margin: clamp(40px, 6vw, 72px) 0; border: 1px solid rgba(251,191,36,0.22); }
+        .log-head { display: flex; align-items: center; gap: 14px; padding: 14px 22px; border-bottom: 1px solid rgba(251,191,36,0.16); }
+        .log-head h3 { margin: 0; font-family: var(--display); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.06em; }
+        .log-head .tag { margin-left: auto; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); border: 1px solid rgba(251,191,36,0.3); padding: 3px 9px; }
+        .log-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+        .log-cell { padding: 18px 22px; border-right: 1px solid rgba(251,191,36,0.12); }
+        .log-cell:last-child { border-right: 0; }
+        .log-cell .v { margin-top: 7px; font-size: 13.5px; font-weight: 500; }
+        .log-total { display: flex; align-items: flex-end; gap: 4px; padding: 16px 22px; border-top: 1px solid rgba(251,191,36,0.16); background: rgba(251,191,36,0.035); }
+        .log-total .amt { font-family: var(--display); font-size: clamp(1.1rem, 2.4vw, 1.5rem); color: var(--amber); font-variant-numeric: tabular-nums; }
+        @media (max-width: 700px) { .log-grid { grid-template-columns: minmax(0, 1fr); }
+            .log-cell { border-right: 0; border-bottom: 1px solid rgba(251,191,36,0.12); }
+            .log-cell:last-child { border-bottom: 0; } }
+
+        /* ── Argumento ── */
+        .argument { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gut); padding: clamp(40px, 6vw, 72px) 0; border-top: 1px solid var(--rule); }
+        @media (max-width: 900px) { .argument { grid-template-columns: minmax(0, 1fr); gap: 34px; } }
+        .argument h2 { margin: 0 0 22px; font-size: clamp(1.5rem, 3.4vw, 2.3rem); }
+        .benefit { display: grid; grid-template-columns: auto 1fr; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--rule-soft); }
+        .benefit:first-of-type { border-top: 1px solid var(--rule); }
+        .benefit .n { font-family: var(--mono); font-size: 10.5px; color: var(--laser); letter-spacing: 0.14em; padding-top: 3px; }
+        .benefit .t { font-family: var(--display); font-size: 0.86rem; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 7px; }
+        .benefit .d { font-size: 12.5px; line-height: 1.7; color: var(--muted); }
+
+        .reel { position: relative; display: block; margin-top: 26px; border: 1px solid var(--rule); overflow: hidden; aspect-ratio: 16 / 9; }
+        .reel img { width: 100%; height: 100%; object-fit: cover; opacity: 0.66; transition: opacity .45s, transform .7s cubic-bezier(.16,.84,.44,1); }
+        .reel:hover img { opacity: 0.92; transform: scale(1.035); }
+        .reel:hover { border-color: var(--laser-dim); }
+        .reel .play i { border-top-width: 13px; border-bottom-width: 13px; border-left-width: 22px; }
+        .reel .cap { position: absolute; left: 14px; bottom: 12px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text); text-shadow: 0 2px 10px rgba(0,0,0,.8); }
+
+        .combo { margin-top: 30px; padding: 16px 20px; border: 1px solid var(--laser-dim); background: rgba(0,255,29,0.05); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--laser); }
+
+        /* ── Antecedentes ── */
+        .record { padding: clamp(40px, 6vw, 72px) 0; border-top: 1px solid var(--rule); }
+        .record-list { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: var(--gut); }
+        @media (max-width: 760px) { .record-list { grid-template-columns: minmax(0, 1fr); } }
+        .rec { display: flex; align-items: flex-end; gap: 4px; padding: 13px 0; border-bottom: 1px solid var(--rule-soft); }
+        .rec .nm { font-size: 13px; font-weight: 500; color: var(--text); flex: 0 1 auto; }
+        .rec .dots { flex: 1 1 auto; border-bottom: 1px dotted rgba(230,235,230,0.16); margin: 0 12px 5px; min-width: 16px; }
+        .rec .lc { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--laser-dim); flex: 0 0 auto; text-align: right; }
+
+        /* ── Cierre ── */
+        .terms { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--gut); padding: clamp(40px, 6vw, 72px) 0; border-top: 1px solid var(--rule); }
+        @media (max-width: 900px) { .terms { grid-template-columns: minmax(0, 1fr); gap: 40px; } }
+        .term { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--rule-soft); font-size: 12.5px; line-height: 1.65; color: var(--muted); }
+        .term .n { font-family: var(--mono); font-size: 10px; color: var(--laser-dim); letter-spacing: 0.1em; padding-top: 2px; }
+        .contact-row { display: flex; align-items: baseline; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--rule-soft); }
+        .contact-row .k { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--faint); flex: 0 0 66px; }
+        .contact-row .v { font-size: 13.5px; font-weight: 500; }
+        .contact-row a { color: var(--laser); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .25s; }
+        .contact-row a:hover { border-bottom-color: var(--laser); }
+
+        .closing { padding: clamp(48px, 8vw, 96px) 0 clamp(90px, 12vw, 130px); border-top: 1px solid var(--rule); text-align: center; }
+        .closing img { height: 112px; width: 122px; margin: 0 auto 30px; opacity: 1; }
+        .closing p { margin: 0; font-family: var(--display); text-transform: uppercase; font-size: clamp(1.05rem, 3.4vw, 2.1rem); color: var(--laser); letter-spacing: -0.01em; line-height: 1.1; }
+        .closing .sig { margin-top: 20px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.28em; color: var(--faint); text-transform: uppercase; }
+
+        /* ── WhatsApp ── */
+        .wa {
+            position: fixed; right: 20px; bottom: 20px; z-index: 95;
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 13px 18px; background: var(--laser); color: #04120a;
+            font-family: var(--mono); font-size: 11px; font-weight: 600;
+            letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none;
+            box-shadow: 0 0 0 1px rgba(0,255,29,0.4), 0 14px 34px -10px rgba(0,255,29,0.5);
+            transition: transform .25s cubic-bezier(.16,.84,.44,1), box-shadow .25s;
+        }
+        .wa:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(0,255,29,0.7), 0 18px 44px -10px rgba(0,255,29,0.65); }
+        .wa svg { fill: #04120a; }
+        @media (max-width: 620px) { .wa span { display: none; } .wa { padding: 14px; } }
+
+        /* ══════════════════════════════════════════════════════════════
+           CELULAR — el documento se lee en un telefono, no en un escritorio.
+           Los tamanos base venian de Russo One y quedaron chicos con Unbounded,
+           y varios estilos de "etiqueta" ahora llevan frases enteras.
+           ══════════════════════════════════════════════════════════════ */
+        @media (max-width: 680px) {
+            /* Titular: Unbounded es mucho mas ancho que Russo One */
+            .hero h1 { font-size: clamp(1.95rem, 9.5vw, 2.6rem); line-height: 1.02; }
+            .hero { padding-top: clamp(40px, 8vh, 70px); }
+
+            /* El kicker del servicio lleva una frase: dejarlo legible y sin mayusculas */
+            .item-top { flex-direction: column; gap: 6px; align-items: flex-start; }
+            .item-top .label {
+                font-size: 12.5px; letter-spacing: 0.02em; text-transform: none;
+                line-height: 1.45; color: var(--laser-dim); font-family: var(--body);
+                max-width: 34ch;
+            }
+
+            /* Texto secundario: nada por debajo de 12px */
+            .label, .eyebrow { font-size: 11px; letter-spacing: 0.14em; }
+            .prose { font-size: 15px; line-height: 1.7; }
+            .led-note { font-size: 12.5px; letter-spacing: 0.02em; text-transform: none; line-height: 1.6; }
+            .combo { font-size: 12.5px; letter-spacing: 0.04em; line-height: 1.6; }
+            .benefit .d { font-size: 13.5px; }
+            /* .sub y .cap llevan texto real (que incluye cada opcion), no etiquetas */
+            .led-label .sub { font-size: 12.5px; letter-spacing: 0.02em; }
+            .reel .cap { font-size: 11.5px; }
+            .mast-meta { font-size: 11px; }
+            .sec-head .count { font-size: 11px; }
+            /* el cuerpo del servicio trae font-size inline: hay que ganarle en movil */
+            .item-grid .prose { font-size: 15px !important; }
+            .rec .nm { font-size: 13.5px; }
+            .rec .lc { font-size: 11px; }
+            .term { font-size: 13px; }
+            .closing .sig { font-size: 11px; letter-spacing: 0.18em; }
+            .spec-cell .v { font-size: 14px; }
+
+            /* Renglon de precio: en 390px no entran etiqueta + puntos + precio */
+            .led-row { flex-wrap: wrap; gap: 2px 4px; }
+            .led-label { font-size: 12.5px; letter-spacing: 0.04em; max-width: 100%; flex: 1 1 100%; }
+            .led-dots { display: none; }
+            .led-price { font-size: 1.5rem; margin-top: 2px; }
+
+            /* Contacto: los links tenian 18px de alto, imposibles de tocar */
+            .contact-row { flex-direction: column; gap: 4px; padding: 10px 0; }
+            .contact-row .k { flex: none; }
+            .contact-row .v { font-size: 15px; }
+            .contact-row a { display: inline-block; min-height: 44px; line-height: 44px; }
+
+            /* Antecedentes: nombre y lugar uno debajo del otro */
+            .rec { flex-wrap: wrap; }
+            .rec .dots { display: none; }
+            .rec .lc { flex: 1 1 100%; text-align: left; margin-top: 2px; }
+
+            /* Franjas mas bajas para no comer scroll */
+            .band { min-height: 200px; padding: 24px 0; }
+
+            /* "A cotizar" se partia en dos lineas y se salia del recuadro */
+            .log-total { flex-direction: column; align-items: flex-start; gap: 8px; padding: 14px 18px; }
+            .log-total .led-dots { display: none; }
+            .log-total .amt { font-size: 1.35rem; white-space: nowrap; }
+            .log-head { flex-wrap: wrap; gap: 10px; }
+            .log-head .tag { margin-left: 0; white-space: nowrap; }
+            .log-cell { padding: 16px 18px; }
+
+            /* La franja quedaba pisada por el encabezado fijo al scrollear */
+            .band { padding-top: 56px; }
+
+            /* El boton de WhatsApp tapaba texto: mas chico y mas al borde */
+            .wa { right: 12px; bottom: 12px; padding: 11px; }
+            .wa svg { width: 20px; height: 20px; }
+            /* Aire al final para que el boton no atrape el ultimo contenido */
+            .closing { padding-bottom: 120px; }
+            /* La tira se corta sin avisar: degradado que indica que se arrastra */
+            .strip {
+                -webkit-mask-image: linear-gradient(to right, #000 0, #000 88%, transparent 100%);
+                mask-image: linear-gradient(to right, #000 0, #000 88%, transparent 100%);
+            }
+            /* El equipo de laser cuesta bateria: menos velo y menos area */
+            .rig::after { background: radial-gradient(ellipse 120% 80% at 40% 50%, rgba(9,15,10,0.72) 0%, rgba(9,15,10,0.35) 60%, rgba(9,15,10,0.1) 100%); }
+        }
+
+        /* Pantallas muy chicas */
+        @media (max-width: 380px) {
+            .hero h1 { font-size: 1.75rem; }
+            .item h3 { font-size: 1.3rem; }
+            .masthead img { height: 32px; width: 52px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .reveal, .rule-draw { transition: none; opacity: 1; transform: none; }
+            .scanline { display: none; }
+            .shot img, .frame img, .reel img { transition: none; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.laserman.com.ar/#organization",
+          "name": "DK Laserman Pro",
+          "alternateName": "DK Láser",
+          "description": "Productora de shows láser, túneles láser inmersivos, proyecciones monumentales y mapping arquitectónico para fiestas nacionales, aniversarios de ciudad y eventos institucionales en toda la Argentina.",
+          "url": "https://www.laserman.com.ar/",
+          "logo": "https://laserman.com.ar/wp-admin/images/Logo-Laserman-01.svg",
+          "image": "https://laserman.com.ar/wp-content/uploads/2026/05/webp_fhd_1.jpg_202605141733.jpeg",
+          "telephone": "+5492995920418",
+          "email": "laseryshow@gmail.com",
+          "priceRange": "$$$",
+          "foundingDate": "2010",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Neuquén Capital",
+            "addressRegion": "Neuquén",
+            "addressCountry": "AR"
+          },
+          "areaServed": { "@type": "Country", "name": "Argentina" },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "name": "Nicolás Kollrich — Productor Ejecutivo",
+            "telephone": "+5492995920418",
+            "email": "laseryshow@gmail.com",
+            "availableLanguage": "Spanish"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.laserman.com.ar/presupuesto-eventos/#service",
+          "name": "Shows láser para fiestas populares y aniversarios de ciudad",
+          "serviceType": "Espectáculo láser en vivo",
+          "provider": { "@id": "https://www.laserman.com.ar/#organization" },
+          "areaServed": { "@type": "Country", "name": "Argentina" },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servicios DK Laserman",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "priceCurrency": "ARS",
+                "price": "2350000",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Show Laserman en vivo (11 min)",
+                  "description": "Único espectáculo de manipulación láser en vivo de Latinoamérica. Sin pantallas ni loops pregrabados: cada haz responde al movimiento del artista en tiempo real."
+                }
+              },
+              {
+                "@type": "Offer",
+                "priceCurrency": "ARS",
+                "price": "625000",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Túnel láser inmersivo 20 metros",
+                  "description": "Corredor de haces láser volumétricos en el ingreso al predio, sin estructura ni montaje complejo."
+                }
+              },
+              {
+                "@type": "Offer",
+                "priceCurrency": "ARS",
+                "price": "925000",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Túnel láser RGB 20 metros",
+                  "description": "Corredor de haces láser volumétricos full color RGB en el ingreso al predio."
+                }
+              },
+              {
+                "@type": "Offer",
+                "priceCurrency": "ARS",
+                "price": "2725000",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Túnel láser RGB 100 metros",
+                  "description": "Túnel láser RGB full color de 100 metros para grandes predios."
+                }
+              },
+              {
+                "@type": "Offer",
+                "priceCurrency": "ARS",
+                "price": "4000000",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Show láser en escenario — láser RGB 10 W",
+                  "description": "Haces láser RGB proyectados desde el escenario hacia el público, sincronizados con la música."
+                }
+              },
+              {
+                "@type": "Offer",
+                "priceCurrency": "ARS",
+                "price": "12000000",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Show láser en escenario — láser RGB 20 W",
+                  "description": "Sistema láser RGB de 20 W sobre escenario para grandes predios."
+                }
+              },
+              {
+                "@type": "Offer",
+                "priceCurrency": "ARS",
+                "price": "19000000",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Show láser en escenario — láser RGB 30 W",
+                  "description": "Sistema láser RGB de 30 W sobre escenario, máxima potencia para eventos masivos."
+                }
+              },
+              {
+                "@type": "Offer",
+                "priceCurrency": "ARS",
+                "price": "2425000",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Túnel láser inmersivo 100 metros",
+                  "description": "Experiencia extendida de túnel láser volumétrico para grandes predios."
+                }
+              },
+              {
+                "@type": "Offer",
+                "priceCurrency": "ARS",
+                "price": "484500",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Proyección monumental simple (por hora)",
+                  "description": "Proyecciones láser de gran formato sobre fachadas para anunciar el evento y mostrar sponsors."
+                }
+              },
+              {
+                "@type": "Offer",
+                "priceCurrency": "ARS",
+                "price": "660000",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Proyección monumental interactiva (por hora)",
+                  "description": "Proyección láser de gran formato con interacción en vivo sobre edificios de la ciudad."
+                }
+              },
+              {
+                "@type": "Offer",
+                "priceCurrency": "ARS",
+                "price": "360000",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Mapping arquitectónico",
+                  "description": "Pieza audiovisual a medida proyectada sobre un edificio emblemático de la ciudad."
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.laserman.com.ar/presupuesto-eventos/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Cuánto cuesta un show láser para un aniversario de ciudad?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El Show Laserman completo de 11 minutos tiene un valor de $2.350.000. El túnel láser inmersivo arranca en $625.000 por 20 metros ($925.000 en versión RGB full color), el show láser sobre escenario desde $4.000.000 y el mapping arquitectónico $360.000. Contratando 3 o más servicios se aplica un 10% de descuento sobre el total."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Hace falta escenario para el Show Laserman?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. El Show Laserman no necesita estructura de escenario y opera sobre cualquier superficie, lo que reduce mucho los costos de logística del municipio sin perder impacto visual."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿El show usa pirotecnia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Es tecnología láser 100% limpia: sin pirotecnia, sin estruendos ni residuos. Es seguro para familias y mascotas y se alinea con las normativas de eventos sustentables."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Viajan a cualquier provincia de Argentina?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. DK Laserman Pro sale desde Neuquén Capital y trabaja en todo el país. El traslado se cotiza por separado según la distancia, e incluye comida, estadía y viáticos para 2 personas a cargo del contratante."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo se reserva la fecha?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Con un adelanto del 50% se confirma la fecha y arranca la personalización del show. El saldo se abona antes del inicio del evento. El presupuesto tiene una validez de 15 días desde su emisión."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQD926FF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <div id="grid-bg"></div>
+    <div id="glow-top"></div>
+    <div id="progress"></div>
+    <!-- Contenido estático indexable. React lo reemplaza al montar; los crawlers sin JS
+         y el primer paint ven exactamente la misma información. -->
+    <div id="root">
+        <div class="shell" style="padding-top:48px;padding-bottom:64px">
+            <img src="https://laserman.com.ar/wp-admin/images/Logo-Laserman-02.svg"
+                 alt="DK Laserman Pro — shows láser para eventos" width="242" height="150" style="height:40px;width:65px">
+            <h1 class="display" style="font-size:clamp(2rem,7vw,4rem);margin:26px 0 0">
+                La noche que su ciudad <span style="color:var(--laser)">va a recordar</span>
+            </h1>
+            <p class="prose" style="margin-top:22px">
+                DK Laserman Pro produce el único show de manipulación láser en vivo de Latinoamérica,
+                túneles láser inmersivos, proyecciones monumentales sobre fachadas y mapping arquitectónico
+                a medida para fiestas nacionales, festivales y aniversarios de ciudad en toda la Argentina.
+                Más de 15 años de experiencia y presencia en fiestas nacionales de Neuquén, Río Negro,
+                Santa Fe y Misiones.
+            </p>
+
+            <h2 class="display" style="font-size:1.3rem;margin-top:40px">Servicios y precios</h2>
+            <ul class="prose">
+                <li><strong>Show Laserman en vivo (11 minutos)</strong> — $ 2.350.000. Manipulación láser en tiempo real frente al público, sin escenario ni loops pregrabados.</li>
+                <li><strong>Túnel láser inmersivo 20 metros</strong> — $ 625.000. Corredor de haces volumétricos en el ingreso al predio.</li>
+                <li><strong>Túnel láser inmersivo 100 metros</strong> — $ 2.425.000. Experiencia extendida para grandes predios.</li>
+                <li><strong>Túnel láser RGB 20 metros</strong> — $ 925.000. Corredor de haces full color.</li>
+                <li><strong>Túnel láser RGB 100 metros</strong> — $ 2.725.000. Corredor RGB para grandes predios.</li>
+                <li><strong>Show láser en escenario — láser RGB 10 W</strong> — $ 4.000.000. Haces desde el escenario hacia el público.</li>
+                <li><strong>Show láser en escenario — láser RGB 20 W</strong> — $ 12.000.000. Alcance ampliado para grandes escenarios.</li>
+                <li><strong>Show láser en escenario — láser RGB 30 W</strong> — $ 19.000.000. Máxima potencia para predios masivos.</li>
+                <li><strong>Proyección monumental simple (por hora)</strong> — $ 484.500. Anuncio del evento y sponsors sobre los edificios de la ciudad.</li>
+                <li><strong>Proyección monumental interactiva (por hora)</strong> — $ 660.000.</li>
+                <li><strong>Mapping arquitectónico</strong> — $ 360.000. Pieza audiovisual diseñada para un edificio emblemático.</li>
+            </ul>
+            <p class="prose"><strong>Descuento combo:</strong> 10% OFF al contratar 3 o más servicios. Traslado desde Neuquén Capital a cotizar según distancia.</p>
+
+            <h2 class="display" style="font-size:1.3rem;margin-top:40px">Preguntas frecuentes</h2>
+            <h3 style="font-size:1rem">¿Cuánto cuesta un show láser para un aniversario de ciudad?</h3>
+            <p class="prose">El Show Laserman completo de 11 minutos cuesta $2.350.000. El túnel láser inmersivo arranca en $625.000 ($925.000 en RGB), el show láser sobre escenario desde $4.000.000 y el mapping arquitectónico $360.000. Contratando 3 o más servicios se aplica un 10% de descuento.</p>
+            <h3 style="font-size:1rem">¿Hace falta escenario?</h3>
+            <p class="prose">No. El Show Laserman opera sobre cualquier superficie y no necesita estructura de escenario, lo que baja fuerte los costos de logística del municipio.</p>
+            <h3 style="font-size:1rem">¿Usa pirotecnia?</h3>
+            <p class="prose">No. Es tecnología láser limpia: sin pirotecnia, sin estruendos ni residuos. Segura para familias y mascotas.</p>
+            <h3 style="font-size:1rem">¿Viajan a cualquier provincia?</h3>
+            <p class="prose">Sí, a todo el país. Salimos desde Neuquén Capital y el traslado se cotiza según la distancia.</p>
+
+            <h2 class="display" style="font-size:1.3rem;margin-top:40px">Contacto</h2>
+            <p class="prose">
+                Nicolás Kollrich — Productor Ejecutivo ·
+                <a href="tel:+5492995920418">+54 9 299 5920-418</a> ·
+                <a href="mailto:laseryshow@gmail.com">laseryshow@gmail.com</a> ·
+                <a href="https://www.laserman.com.ar">www.laserman.com.ar</a>
+            </p>
+        </div>
+    </div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        /* ════════════════════════════════════════════════════
+           CONFIG — Completar antes de enviar a cada contacto
+           ════════════════════════════════════════════════════ */
+        const CONFIG = {
+            // El titular se arma solo con la ciudad. Dejar vacío para usar "SU CIUDAD".
+            tituloLine1:     "LA NOCHE QUE",
+            tituloLine2:     "VA A RECORDAR",
+            clienteNombre:   "A completar",
+            clienteCargo:    "",
+            evento:          "Evento Popular o Aniversario",
+            location:        "A confirmar",
+            ciudad:          "",   // ← poner la ciudad acá personaliza el titular: "LA NOCHE QUE RUFINO VA A RECORDAR". Vacío = "SU CIUDAD".
+            quoteId:         "DKL-000-26",
+            fechaEvento:     "A confirmar",
+            distanciaKm:     "A confirmar",
+            costoTraslado:   "A cotizar",
+        };
+
+        // La PNG anterior (wp-content/uploads/2026/05/Logo-Laserman-01.png) devuelve 422:
+        // el logo salía roto en todos los presupuestos enviados.
+        // Los tres SVG del servidor tienen proporciones muy distintas, así que cada
+        // lugar usa el que corresponde en vez de encoger el lockup a un sello:
+        //   01 = lockup completo (casi cuadrado)  02 = palabra en blanco  03 = isotipo verde
+        const LOGO       = "https://laserman.com.ar/wp-admin/images/Logo-Laserman-01.svg";
+        const LOGO_MARCA = "https://laserman.com.ar/wp-admin/images/Logo-Laserman-02.svg";
+
+        const IMAGES = {
+            laserman: "https://laserman.com.ar/wp-content/uploads/2026/04/vision_extract_shot_1771059870-scaled.png",
+            padre_hijo: "https://laserman.com.ar/wp-content/uploads/2026/04/LASERMAN-007_4_2_2-frame-at-0m16s-e1777785805679.jpg",
+            multitud_escenario: "https://laserman.com.ar/wp-content/uploads/2026/04/omni-3d65b4f9-ca83-4559-bec1-67709650faf4.png",
+            laserman_closeup: "https://laserman.com.ar/wp-content/uploads/2026/04/vision_extract_shot_1771383265-scaled.png",
+            publico_celulares: "https://laserman.com.ar/wp-content/uploads/2026/04/LASERMAN-007_4_2_1-frame-at-0m21s.jpg",
+            tunel_reinas_cuadrada: "https://laserman.com.ar/wp-content/uploads/2026/05/IMG-20260311-WA0058-scaled.jpg",
+            tunel_verde: "https://laserman.com.ar/wp-content/uploads/2026/05/IMG-20260222-WA0008-scaled.jpg",
+            tunel_espiral: "https://laserman.com.ar/wp-content/uploads/2026/05/VideoCapture_20250317-200821.jpg",
+            tunel_extra1: "https://laserman.com.ar/wp-content/uploads/2026/05/WhatsApp-Image-2024-09-18-at-12.38.32-1.jpeg",
+            proyeccion_1: "https://laserman.com.ar/wp-content/uploads/2026/04/Gemini_Generated_Image_o10sl9o10sl9o10s-1.png",
+            proyeccion_2: "https://laserman.com.ar/wp-content/uploads/2026/04/DEOPARTAMENTO-scaled.jpg",
+        };
+
+        const QUOTE_DATA = {
+            quoteDetails: {
+                id: CONFIG.quoteId,
+                date: CONFIG.fechaEvento
+            },
+            hero: {
+                // "LA NOCHE QUE RUFINO" — personaliza el presupuesto con la ciudad del cliente
+                titleLine1: CONFIG.tituloLine1 + " " + (CONFIG.ciudad ? CONFIG.ciudad.toUpperCase() : "SU CIUDAD"),
+                titleLine2: CONFIG.tituloLine2,
+                subtitle: "Una ciudad. Una noche. Miles de personas mirando hacia el mismo lugar.\n\nHay un momento, cuando se apaga todo y el primer haz cruza la plaza, en que miles de personas dejan de hablar al mismo tiempo. Los chicos arriba de los hombros. Los abuelos que vienen a esta fiesta desde siempre y nunca vieron nada parecido. Eso es lo que dura once minutos y se cuenta durante años. Una ciudad que vive una noche así no pasa desapercibida. Tampoco la gestión que la hizo posible."
+            },
+            clientInfo: {
+                client: CONFIG.clienteNombre + (CONFIG.clienteCargo ? " / " + CONFIG.clienteCargo : ""),
+                event: CONFIG.evento,
+                location: CONFIG.location,
+                producer: "Nicolás Kollrich",
+                validity: "15 días"
+            },
+            services: [
+                {
+                    id: "01",
+                    title: "SHOW LASERMAN EN VIVO",
+                    kicker: "Durante 11 minutos, el escenario deja de ser un escenario",
+                    description: "No hay pantalla. No hay video pregrabado. Hay una persona parada frente a la gente moviendo la luz con las manos, y la luz le responde. Por eso nadie mira el celular durante once minutos. Se escucha el murmullo cuando arranca, y después no se escucha nada. Cuando termina, la gente tarda un segundo en aplaudir — porque primero tiene que entender lo que vio. Ese segundo es el show. Once minutos que el público nunca va a olvidar. Una experiencia de nivel internacional que hasta ahora solo existía en los grandes escenarios del mundo. La gestión que la trae a su ciudad no organiza un evento más — construye un legado.",
+                    mainImage: "https://laserman.com.ar/presupuestos/laserman-principal.jpg",
+                    thumbs: ["https://laserman.com.ar/wp-content/uploads/2026/04/videoframe_1099.png", IMAGES.laserman, IMAGES.padre_hijo, IMAGES.multitud_escenario, IMAGES.laserman_closeup, IMAGES.publico_celulares],
+                    youtubeVideos: ["1oPjzmaLdlM", "h6-5NnUaf44", "WtgerGdSAwA", "D2Toqai4aww"],
+                    includes: "Incluye: diseño del show personalizado para su evento · equipo completo · montaje y desmontaje · operación técnica en vivo · artista y equipo de producción.",
+                    specs: [
+                        ["Duración", "11 minutos de show en vivo"],
+                        ["Fuente", "Láser RGB de manipulación en vivo"],
+                        ["Control", "Operación en tiempo real (ILDA)"],
+                        ["Montaje / desmontaje", "A cargo de DK Laserman"],
+                        ["Alimentación", "220 V — a confirmar según sede"],
+                        ["Seguridad", "Sin pirotecnia, sin humo pesado, sin estruendos"]
+                    ],
+                    options: [{ label: "Show Completo (11 min)", price: "$ 2.350.000" }]
+                },
+                {
+                    id: "02",
+                    title: "TÚNEL LÁSER INMERSIVO",
+                    kicker: "La fiesta empieza antes de entrar",
+                    description: "Nadie entra caminando a un túnel de láser. Entran, frenan en el borde, miran, y recién después avanzan — despacio, con la mano estirada, tocando algo que no está ahí. Los chicos vuelven a pasar tres, cuatro veces. Es lo primero que ven al llegar y es lo primero que van a contar cuando lleguen a la casa. No hay estructura, no hay andamios, no hay nada que desarmar: al otro día la entrada al predio vuelve a ser una entrada común. El recuerdo no.",
+                    mainImage: "https://laserman.com.ar/wp-content/uploads/2026/05/2-scaled.jpg",
+                    thumbs: [IMAGES.tunel_reinas_cuadrada, IMAGES.tunel_verde, IMAGES.tunel_espiral, IMAGES.tunel_extra1],
+                    youtubeVideos: ["ToSEWX40VYk", "pMBwAT54P5s", "IyZA_XhXeOc", "uSjspc2N0m0"],
+                    options: [
+                        { label: "Túnel 20 metros", price: "$ 625.000", details: "Haz verde monocromo" },
+                        { label: "Túnel 100 metros", price: "$ 2.425.000", details: "Experiencia extendida" },
+                        { label: "Túnel RGB 20 metros", price: "$ 925.000", rgb: true, details: "Full color: rojo, verde y azul" },
+                        { label: "Túnel RGB 100 metros", price: "$ 2.725.000", rgb: true, details: "Full color, experiencia extendida" }
+                    ],
+                    specs: [
+                        ["Longitud", "20 m o 100 m de corredor"],
+                        ["Color", "Verde monocromo o RGB full color"],
+                        ["Estructura", "Sin andamios ni estructura fija"],
+                        ["Emplazamiento", "Ingreso al predio, exterior o interior"],
+                        ["Alimentación", "220 V — a confirmar según sede"],
+                        ["Seguridad", "Haces por encima de la línea de paso, Clase profesional"]
+                    ],
+                    note: "A partir de 3 horas, 30% OFF en cada hora adicional"
+                },
+                {
+                    id: "03",
+                    title: "PROYECCIONES MONUMENTALES",
+                    kicker: "La ciudad habla de la fiesta antes de que empiece",
+                    description: "Una semana antes de la fiesta, alguien vuelve del trabajo y ve el frente de la municipalidad iluminado con el nombre del evento. Frena el auto. Saca una foto. Al otro día en el trabajo alguien le pregunta qué era eso. Así empieza la fiesta: no el día de la fiesta, sino cuando la ciudad entera se da cuenta de que algo viene. Sin carteles, sin folletos, sin nada que después haya que juntar de la calle. Solo luz sobre las paredes de siempre.",
+                    mainImage: "https://laserman.com.ar/wp-content/uploads/2026/04/IMG-20250809-WA00121.jpg",
+                    thumbs: ["https://laserman.com.ar/wp-content/uploads/2026/05/IMG-20240105-WA0039-225x300.jpg", "https://laserman.com.ar/wp-content/uploads/2026/04/IMG-20250809-WA00121-240x300.jpg", "https://laserman.com.ar/wp-content/uploads/2026/04/WhatsApp-Video-2025-10-30-at-11.27.00-PM-frame-at-0m25s.jpg"],
+                    youtubeVideos: ["4dNUOfHz8P0", "ovl_N5YCsIQ", "Mc3GKmQDZ-A", "MbaPQ6oZYGg", "wzhA7B-Fg2I", "n-sd3PBWdgA"],
+                    options: [
+                        { label: "Proyección simple (por hora)", price: "$ 484.500", details: "Imágenes y mensajes fijos sobre la fachada" },
+                        { label: "Proyección interactiva (por hora)", price: "$ 660.000", details: "La proyección responde en vivo al movimiento de la gente" }
+                    ],
+                    specs: [
+                        ["Modalidad", "Simple (contenido fijo) o interactiva"],
+                        ["Superficie", "Fachadas y edificios de la ciudad"],
+                        ["Unidad de contratación", "Por hora de proyección"],
+                        ["Contenido", "Anuncio del evento y sponsors"],
+                        ["Alimentación", "220 V — a confirmar según sede"],
+                        ["Distancia de tiro", "A confirmar según relevamiento"]
+                    ],
+                    note: "30% OFF en horas adicionales (+3hs)"
+                },
+                {
+                    id: "04",
+                    title: "MAPPING ARQUITECTÓNICO",
+                    kicker: "No existe otro lugar donde pueda repetirse",
+                    description: "Todo el mundo en la ciudad pasó mil veces por delante de ese edificio y ya no lo mira. Esa noche lo van a mirar. Las paredes se mueven. La fachada respira. Y la historia del pueblo aparece proyectada sobre sus propios muros — la de ellos, con sus nombres y sus fechas, no una genérica que sirva para cualquier lado. Es una pieza que se diseña para ese edificio y no funciona en ningún otro. Cuando termina, la fachada vuelve a ser la de siempre. Pero ya nadie la mira igual.",
+                    mainImage: "https://laserman.com.ar/wp-content/uploads/2026/05/b1721527-8d11-4a2b-be98-a27cdc365c69.png",
+                    thumbs: ["https://laserman.com.ar/wp-content/uploads/2026/05/1765380823186-300x127.png", IMAGES.proyeccion_1, IMAGES.proyeccion_2],
+                    youtubeVideos: ["4dNUOfHz8P0", "tsaVuYV1fUo", "GjONGipjx8o"],
+                    specs: [
+                        ["Producción", "Pieza audiovisual diseñada a medida"],
+                        ["Superficie", "Un edificio emblemático"],
+                        ["Relevamiento", "Previo, sobre la fachada real"],
+                        ["Alimentación", "220 V — a confirmar según sede"],
+                        ["Distancia de tiro", "A confirmar según relevamiento"]
+                    ],
+                    options: [{ label: "Mapping sobre un edificio", price: "$ 360.000", details: "Pieza diseñada a medida para esa fachada" }]
+                },
+                {
+                    id: "05",
+                    title: "SHOW LÁSER EN ESCENARIO",
+                    kicker: "El escenario deja de terminar en el borde",
+                    description: "Los haces salen desde el escenario hacia adelante y se abren sobre la gente. Deja de haber un límite entre el que toca y el que mira: la luz cruza por encima de todas las cabezas y el predio entero queda adentro del show. Funciona con la banda en vivo, con el DJ o con el cierre del acto, en sincronía con la música. Es el efecto que separa un escenario común de uno que se ve desde la otra punta de la ciudad.",
+                    mainImage: IMAGES.multitud_escenario,
+                    thumbs: [IMAGES.publico_celulares],
+                    youtubeVideos: ["h6-5NnUaf44"],
+                    specs: [
+                        ["Emplazamiento", "Sobre escenario, proyección frontal hacia el público"],
+                        ["Fuente", "Láser RGB full color, 10 W / 20 W / 30 W"],
+                        ["Control", "Sincronizado con la música, operación en vivo"],
+                        ["Cobertura", "Según potencia contratada y tamaño del predio"],
+                        ["Alimentación", "220 V — a confirmar según sede"],
+                        ["Seguridad", "Haces por encima de la línea del público"]
+                    ],
+                    includes: "Incluye: montaje sobre escenario · operación técnica en vivo · programación sincronizada con el line-up · desmontaje.",
+                    options: [
+                        { label: "Láser RGB 10 W", price: "$ 4.000.000", rgb: true, details: "Escenarios y predios medianos" },
+                        { label: "Láser RGB 20 W", price: "$ 12.000.000", rgb: true, details: "Gran escenario, alcance ampliado" },
+                        { label: "Láser RGB 30 W", price: "$ 19.000.000", rgb: true, details: "Máxima potencia, predios masivos" }
+                    ],
+                    note: "Se cotiza por noche de evento. Combinable con el Show Laserman en vivo."
+                }
+            ],
+            transport: {
+                origin: "Neuquén Capital",
+                destination: CONFIG.distanciaKm === "A confirmar" ? "A confirmar" : CONFIG.location,
+                distance: CONFIG.distanciaKm,
+                total: CONFIG.costoTraslado,
+                isQuote: CONFIG.costoTraslado === "A cotizar",
+                note: "Solo ida"
+            },
+            whyChooseUs: {
+                title: "¿Por qué LASERMAN?",
+                paragraphs: [
+                    "Porque no vinimos a llenar un espacio en el programa. Vinimos a crear el momento que todos van a recordar. Más de 15 años en los escenarios más grandes del país, en fiestas nacionales, festivales y actos oficiales.",
+                    "Después de quince años montando esto, aprendimos que lo que queda no es el espectáculo: es la cara de la gente mirándolo. Eso no se consigue repitiendo lo del año pasado. Se consigue trayendo algo que nadie vio, una sola vez, y dejando que pase."
+                ],
+                benefitsTitle: "Lo que queda después",
+                benefits: [
+                    { title: "El silencio antes del aplauso", description: "Hay un instante, cuando termina el show, en que la gente tarda en reaccionar. Ese silencio es la única medida honesta de que algo salió realmente bien. Se escucha desde donde uno esté parado." },
+                    { title: "Una fiesta que se cuenta", description: "Al otro día nadie habla del sonido ni del escenario. Hablan de lo que vieron. Y el recuerdo queda pegado a quien lo hizo posible, sin que haga falta decirlo." },
+                    { title: "Para los que nunca vieron nada así", description: "En la mayoría de las ciudades del país esto todavía no llegó. Para buena parte de su gente va a ser la primera vez. Y las primeras veces no se olvidan nunca." },
+                    { title: "Molesto para nadie, seguro para todos", description: "Sin estruendos, sin pirotecnia, sin humo. Los chicos no se asustan, los perros del barrio tampoco, y al otro día no queda nada tirado en la calle." }
+                ],
+                closingParagraph: "No vendemos un show. Vendemos la noche que su ciudad va a recordar: la que la gente va a contar en la panadería al día siguiente, la que va a quedar en las fotos de la familia durante años, y la que va a poner la vara para todas las fiestas que vengan después.",
+                highlight: "Hagamos que el evento empiece antes de que abra el escenario. Túnel para recibir. Proyecciones para anunciar. LASERMAN para cerrar. Contratando 3 o más experiencias, 10% de descuento.",
+                youtubeVideo: "D2Toqai4aww"
+            },
+            festivals: {
+                title: "No es la primera vez que hacemos historia en una fiesta nacional",
+                items: [
+                    { name: "Fiesta Nacional del Chef Patagónico", location: "Villa Pehuenia / Moquehue" },
+                    { name: "Fiesta Nacional del Tomate", location: "Lamarque, Río Negro" },
+                    { name: "Fiesta Nacional del Chocolate", location: "Bariloche" },
+                    { name: "Fiesta Nacional del Pionero", location: "Centenario" },
+                    { name: "Fiesta Nacional de la Navidad", location: "Leandro N. Alem, Misiones" },
+                    { name: "Fiesta Nacional de la Actividad Física", location: "Cipolletti, Río Negro" },
+                    { name: "Fiesta Nacional del Lúpulo", location: "El Bolsón, Río Negro" },
+                    { name: "Fiesta Nacional del Fútbol Infantil", location: "Sunchales, Santa Fe" }
+                ]
+            },
+            footer: {
+                conditions: {
+                    title: "CONDICIONES GENERALES",
+                    items: [
+                        "Presupuesto válido por 15 días desde la fecha de emisión.",
+                        "Se requiere un adelanto del 50% para confirmar la fecha y comenzar personalización.",
+                        "Saldo a pagar antes del inicio del evento.",
+                        "Gastos de comida, estadía y viáticos para 2 personas desde Neuquén a cargo del contratante.",
+                        "Incluye diseño personalizado de show, montaje y desmontaje.",
+                        "Equipos certificados para operar en exteriores.",
+                        "En caso de condiciones climáticas adversas, se evaluará reprogramación con flexibilidad.",
+                        "DESCUENTO COMBO: 10% OFF al contratar 3 o más servicios del presente presupuesto."
+                    ]
+                },
+                contact: {
+                    title: "CONTACTO DIRECTO",
+                    name: "Nicolás Kollrich — Productor Ejecutivo",
+                    phone: "+54 9 299 5920-418",
+                    email: "laseryshow@gmail.com",
+                    web: "www.laserman.com.ar"
+                },
+                tagline: "NO ES CONTRATAR UN SHOW. ES CREAR EL MOMENTO QUE TODOS VAN A RECORDAR."
+            }
+        };
+
+        /* ── Reveal on scroll ── */
+        const useReveal = (delay = 0) => {
+            const ref = useRef(null);
+            useEffect(() => {
+                const el = ref.current;
+                if (!el) return;
+                const obs = new IntersectionObserver(([e]) => {
+                    if (!e.isIntersecting) return;
+                    setTimeout(() => e.target.classList.add('is-in'), delay);
+                    obs.unobserve(e.target);
+                }, { threshold: 0.06, rootMargin: '0px 0px -6% 0px' });
+                obs.observe(el);
+                return () => obs.disconnect();
+            }, [delay]);
+            return ref;
+        };
+
+        /* ── Contador de precio ── */
+        const PriceCounter = ({ price }) => {
+            const [val, setVal] = useState(price.replace(/[0-9]/g, '0'));
+            const ref = useRef(null);
+            useEffect(() => {
+                const raw = price.replace(/[^0-9]/g, '');
+                const target = parseInt(raw, 10);
+                if (isNaN(target)) { setVal(price); return; }
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setVal(price); return; }
+                const duration = 950;
+                let start = null, raf;
+                const obs = new IntersectionObserver(([e]) => {
+                    if (!e.isIntersecting) return;
+                    obs.disconnect();
+                    const tick = (ts) => {
+                        if (!start) start = ts;
+                        const p = Math.min((ts - start) / duration, 1);
+                        const eased = 1 - Math.pow(1 - p, 3);
+                        setVal('$ ' + Math.floor(eased * target).toLocaleString('es-AR'));
+                        if (p < 1) raf = requestAnimationFrame(tick); else setVal(price);
+                    };
+                    raf = requestAnimationFrame(tick);
+                }, { threshold: 0.6 });
+                if (ref.current) obs.observe(ref.current);
+                return () => { obs.disconnect(); cancelAnimationFrame(raf); };
+            }, [price]);
+            return <span ref={ref}>{val}</span>;
+        };
+
+        /* ── Masthead ── */
+        const Masthead = ({ quoteDetails }) => (
+            <div className="masthead">
+                <div className="masthead-in">
+                    <img src={LOGO_MARCA} alt="DK Laserman Pro — shows láser para eventos" width="242" height="150" />
+                    <div className="mast-meta">
+                        <span className="mast-id">{quoteDetails.id}</span>
+                        <span className="sep"></span>
+                        <span className="mast-date">Evento · {quoteDetails.date}</span>
+                    </div>
+                </div>
+            </div>
+        );
+
+        /* ── Motor de láser 3D interactivo ──
+           Cada haz es un vector unitario desde un emisor, rotado por yaw/pitch y
+           proyectado en perspectiva cada cuadro. El mouse mueve el abanico, el clic
+           dispara un pulso. Sin librerías: la mezcla aditiva la hace el canvas 2D. */
+        const LaserRig = () => {
+            const host = useRef(null);
+            const cv = useRef(null);
+
+            useEffect(() => {
+                const el = host.current, canvas = cv.current;
+                if (!el || !canvas) return;
+                const ctx = canvas.getContext('2d');
+                if (!ctx) return;
+
+                const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                const coarse = window.matchMedia('(pointer: coarse)').matches;
+                const MAXB = coarse ? 7 : 13;
+                const NEAR = 0.35, LEN = 22;
+                const EM = { x: 0, y: 0.15, z: 7.4 };
+
+                let w = 0, h = 0, f = 0;
+                const resize = () => {
+                    const r = el.getBoundingClientRect();
+                    const dpr = Math.min(window.devicePixelRatio || 1, coarse ? 1.5 : 2);
+                    w = r.width; h = r.height;
+                    canvas.width = Math.max(1, Math.round(w * dpr));
+                    canvas.height = Math.max(1, Math.round(h * dpr));
+                    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                    f = Math.max(w, h) * 0.62;
+                };
+
+                let tYaw = 0, tPitch = 0, yaw = 0, pitch = 0, pulse = 0;
+                let open = 0.08, tOpen = 0.08;   // apertura del abanico: la maneja el scroll
+                let drift = 0, tDrift = 0;       // el emisor baja a medida que avanza la lectura
+
+                // El scroll a lo largo de TODO el documento abre el show.
+                const onScroll = () => {
+                    const max = document.documentElement.scrollHeight - window.innerHeight;
+                    const p = max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0;
+                    tOpen = 0.08 + p * 0.92;
+                    tDrift = p * 1.5;
+                };
+
+                const onMove = (e) => {
+                    tYaw = (e.clientX / window.innerWidth - 0.5) * 0.72;
+                    tPitch = -(e.clientY / window.innerHeight - 0.5) * 0.30;
+                };
+                const onLeave = () => { tYaw = 0; tPitch = 0; };
+                const onDown = () => { pulse = 1; };
+
+                // Cada sección que entra en pantalla dispara un pulso.
+                let obs = null;
+                const watchSections = () => {
+                    obs = new IntersectionObserver((entries) => {
+                        entries.forEach((en) => { if (en.isIntersecting) pulse = Math.min(1, pulse + 0.7); });
+                    }, { threshold: 0.25 });
+                    document.querySelectorAll('.item, .argument, .record, .terms, .logistics, .closing')
+                        .forEach((n) => obs.observe(n));
+                };
+
+                const rot = (v) => {
+                    const cy = Math.cos(yaw), sy = Math.sin(yaw);
+                    const x1 = v.x * cy - v.z * sy, z1 = v.x * sy + v.z * cy;
+                    const cp = Math.cos(pitch), sp = Math.sin(pitch);
+                    return { x: x1, y: v.y * cp - z1 * sp, z: v.y * sp + z1 * cp };
+                };
+                const proj = (v) => ({ sx: w / 2 + (v.x / v.z) * f, sy: h * (0.72 + drift * 0.16) - (v.y / v.z) * f });
+
+                const beam = (d, k) => {
+                    const tip = { x: EM.x + d.x * LEN, y: EM.y + d.y * LEN, z: EM.z + d.z * LEN };
+                    let a = EM, b = tip;
+                    if (a.z < NEAR && b.z < NEAR) return;
+                    if (b.z < NEAR) { const t = (NEAR - a.z) / (b.z - a.z); b = { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t, z: NEAR }; }
+                    const p = proj(a), q = proj(b);
+                    const g = ctx.createLinearGradient(p.sx, p.sy, q.sx, q.sy);
+                    g.addColorStop(0, 'rgba(0,255,29,' + (0.9 * k) + ')');
+                    g.addColorStop(0.55, 'rgba(0,255,29,' + (0.4 * k) + ')');
+                    g.addColorStop(1, 'rgba(0,255,29,0)');
+                    [[24, 0.09], [6, 0.28], [1.5, 0.9]].forEach(([lw, al]) => {
+                        ctx.globalAlpha = al; ctx.strokeStyle = g; ctx.lineWidth = lw; ctx.lineCap = 'round';
+                        ctx.beginPath(); ctx.moveTo(p.sx, p.sy); ctx.lineTo(q.sx, q.sy); ctx.stroke();
+                    });
+                    ctx.globalAlpha = 1;
+                };
+
+                const render = () => {
+                    ctx.clearRect(0, 0, w, h);
+                    ctx.globalCompositeOperation = 'lighter';
+                    const n = Math.max(1, Math.round(1 + open * (MAXB - 1)));
+                    const spread = 0.16 + open * 0.92;
+                    for (let i = 0; i < n; i++) {
+                        const t = n === 1 ? 0 : i / (n - 1) - 0.5;
+                        const ang = t * spread;
+                        const dir = rot({ x: Math.sin(ang), y: 0.1 + Math.abs(t) * 0.22, z: -Math.cos(ang) });
+                        beam(dir, (0.55 + 0.45 * (1 - Math.abs(t) * 0.45)) * (1 + pulse * 1.6));
+                    }
+                    const e = proj(EM), r = Math.max(w, h) * 0.05;
+                    const gl = ctx.createRadialGradient(e.sx, e.sy, 0, e.sx, e.sy, r);
+                    gl.addColorStop(0, 'rgba(0,255,29,0.5)'); gl.addColorStop(1, 'rgba(0,255,29,0)');
+                    ctx.fillStyle = gl; ctx.beginPath(); ctx.arc(e.sx, e.sy, r, 0, Math.PI * 2); ctx.fill();
+                    ctx.globalCompositeOperation = 'source-over';
+                };
+
+                let raf = 0;
+                const tick = () => {
+                    yaw += (tYaw - yaw) * 0.075; pitch += (tPitch - pitch) * 0.075;
+                    open += (tOpen - open) * 0.055;
+                    drift += (tDrift - drift) * 0.05;
+                    pulse *= 0.93; if (pulse < 0.002) pulse = 0;
+                    render(); raf = window.requestAnimationFrame(tick);
+                };
+
+                resize();
+                if (reduced) { open = 1; tOpen = 1; render(); }
+                else {
+                    onScroll(); open = tOpen; drift = tDrift;
+                    window.addEventListener('resize', resize);
+                    window.addEventListener('scroll', onScroll, { passive: true });
+                    if (!coarse) window.addEventListener('pointermove', onMove, { passive: true });
+                    document.addEventListener('pointerdown', onDown);
+                    window.addEventListener('blur', onLeave);
+                    watchSections();
+                    raf = window.requestAnimationFrame(tick);
+                }
+
+                return () => {
+                    window.cancelAnimationFrame(raf);
+                    if (obs) obs.disconnect();
+                    window.removeEventListener('resize', resize);
+                    window.removeEventListener('scroll', onScroll);
+                    window.removeEventListener('pointermove', onMove);
+                    window.removeEventListener('blur', onLeave);
+                    document.removeEventListener('pointerdown', onDown);
+                };
+            }, []);
+
+            return <div className="rig" ref={host}><canvas ref={cv} aria-hidden="true"></canvas></div>;
+        };
+
+        /* ── Hero ── */
+        const Hero = ({ heroData, quoteDetails }) => {
+            const ref = useReveal(80);
+            return (
+                <section className="hero">
+                    <div className="scanline"></div>
+                    <div ref={ref} className="reveal">
+                        <p className="eyebrow">
+                            Presupuesto <span className="eyebrow-laser">{quoteDetails.id}</span> — Shows láser, mapping y experiencias inmersivas
+                        </p>
+                        <h1 className="display">
+                            {heroData.titleLine1}
+                            <span className="ln2">{heroData.titleLine2}</span>
+                        </h1>
+                        <div className="hero-body">
+                            <p className="prose" style={{ whiteSpace: 'pre-line' }}>{heroData.subtitle}</p>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        /* ── Ficha de datos ── */
+        const SpecSheet = ({ clientInfo }) => {
+            const ref = useReveal(120);
+            const items = [
+                { l: "Cliente", v: clientInfo.client },
+                { l: "Evento", v: clientInfo.event },
+                { l: "Ubicación", v: clientInfo.location },
+                { l: "Producción", v: clientInfo.producer },
+                { l: "Validez", v: clientInfo.validity }
+            ];
+            return (
+                <div ref={ref} className="reveal spec">
+                    {items.map((it, i) => (
+                        <div className="spec-cell" key={i}>
+                            <p className="label" style={{ margin: 0 }}>{it.l}</p>
+                            <p className="v" style={{ margin: 0 }}>{it.v}</p>
+                        </div>
+                    ))}
+                </div>
+            );
+        };
+
+        /* ── Encabezado de sección ── */
+        const SectionHead = ({ idx, title, count }) => {
+            const ref = useReveal();
+            return (
+                <div ref={ref} className="reveal" style={{ marginTop: 'clamp(44px, 7vw, 86px)' }}>
+                    <div className="sec-head">
+                        <span className="idx">{idx}</span>
+                        <h2>{title}</h2>
+                        <span className="spacer"></span>
+                        {count && <span className="count">{count}</span>}
+                    </div>
+                    <div className="rule rule-draw"></div>
+                </div>
+            );
+        };
+
+        /* ── Tira de registro ── */
+        const MediaStrip = ({ thumbs = [], videos = [], context = "DK Laserman" }) => {
+            const total = thumbs.length + videos.length;
+            if (!total) return null;
+            return (
+                <div>
+                    <div className="strip-head">
+                        <span className="label">Registro</span>
+                        <span className="label">{thumbs.length} fotos · {videos.length} videos</span>
+                    </div>
+                    <div className="strip">
+                        {videos.map((vid, i) => (
+                            <a key={"v" + i} className="frame" href={"https://youtu.be/" + vid} target="_blank" rel="noopener noreferrer" aria-label={"Ver video de " + context.toLowerCase() + " en YouTube"}>
+                                <img src={"https://img.youtube.com/vi/" + vid + "/mqdefault.jpg"} alt={"Video de " + context.toLowerCase() + " — DK Laserman"} width="320" height="180" loading="lazy" />
+                                <span className="play"><i></i></span>
+                            </a>
+                        ))}
+                        {thumbs.map((t, i) => (
+                            <div key={"t" + i} className="frame"><img src={t} alt={context + " — registro fotográfico " + (i + 1) + " de DK Laserman en evento real"} width="200" height="200" loading="lazy" /></div>
+                        ))}
+                    </div>
+                </div>
+            );
+        };
+
+        /* ── Ítem del presupuesto ── */
+        const Item = ({ service, delay = 0 }) => {
+            const ref = useReveal(delay);
+            const words = service.title.split(' ');
+            const tail = words.pop() || '';
+            const head = words.join(' ');
+            return (
+                <article ref={ref} className="reveal item">
+                    <div className="item-top">
+                        <span className="item-num">{service.id}</span>
+                        <span className="label">{service.kicker}</span>
+                    </div>
+                    <h3 className="display">{head} <span className="tail">{tail}</span></h3>
+                    <div className="item-grid">
+                        <div className="shot">
+                            <span className="tick"></span>
+                            <img src={service.mainImage}
+                                 alt={service.title.charAt(0) + service.title.slice(1).toLowerCase() + " de DK Laserman — " + service.kicker.toLowerCase() + " en evento municipal"}
+                                 width="800" height="1000"
+                                 loading={service.id === "01" ? "eager" : "lazy"}
+                                 fetchpriority={service.id === "01" ? "high" : "auto"} />
+                        </div>
+                        <div>
+                            <p className="prose" style={{ margin: 0, fontSize: '0.92rem' }}>{service.description}</p>
+                            <MediaStrip thumbs={(service.thumbs || []).slice(0, 1)} videos={(service.youtubeVideos || []).slice(0, 1)} context={service.title} />
+                            {service.specs && (
+                                <div className="techspec">
+                                    <span className="label" style={{ display: 'block', marginBottom: '10px' }}>Ficha técnica</span>
+                                    <dl className="tech-grid">
+                                        {service.specs.map(([k, v], i) => (
+                                            <div className="tech-row" key={i}>
+                                                <dt>{k}</dt>
+                                                <dd>{v}</dd>
+                                            </div>
+                                        ))}
+                                    </dl>
+                                </div>
+                            )}
+                            {service.includes && <p className="led-note" style={{ color: 'var(--muted)', textTransform: 'none', letterSpacing: '0.04em', marginTop: '22px', lineHeight: 1.6 }}>{service.includes}</p>}
+                            <div className="ledger">
+                                {service.options.map((opt, i) => (
+                                    <div className="led-row" key={i}>
+                                        <span className="led-label">
+                                            {opt.rgb ? (<><span className="rgb-tag" aria-hidden="true"></span>{opt.label}</>) : opt.label}
+                                            {opt.details && <span className="sub">{opt.details}</span>}
+                                        </span>
+                                        <span className="led-dots"></span>
+                                        <span className="led-price"><PriceCounter price={opt.price} /></span>
+                                    </div>
+                                ))}
+                            </div>
+                            {service.note && <p className="led-note">↳ {service.note}</p>}
+                        </div>
+                    </div>
+                </article>
+            );
+        };
+
+        /* ── Logística ── */
+        const Logistics = ({ data }) => {
+            const ref = useReveal();
+            const cells = [
+                { l: "Origen", v: data.origin },
+                { l: "Destino", v: data.destination },
+                { l: "Distancia", v: data.distance }
+            ];
+            return (
+                <section ref={ref} className="reveal logistics">
+                    <div className="log-head">
+                        <h3>Traslado y logística</h3>
+                        <span className="tag">{data.note}</span>
+                    </div>
+                    <div className="log-grid">
+                        {cells.map((c, i) => (
+                            <div className="log-cell" key={i}>
+                                <p className="label" style={{ margin: 0 }}>{c.l}</p>
+                                <p className="v" style={{ margin: 0 }}>{c.v}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="log-total">
+                        <span className="label">Estimación de combustible — total ida</span>
+                        <span className="led-dots"></span>
+                        <span className="amt">{data.isQuote ? "A cotizar" : <PriceCounter price={data.total} />}</span>
+                    </div>
+                </section>
+            );
+        };
+
+        /* ── Argumento ── */
+        const Argument = ({ whyData }) => {
+            const ref = useReveal();
+            return (
+                <section ref={ref} className="reveal argument">
+                    <div>
+                        <h2 className="display">{whyData.title}</h2>
+                        {whyData.paragraphs.map((p, i) => (
+                            <p key={i} className="prose" style={{ fontSize: '0.9rem', marginTop: i ? '16px' : 0 }}>{p}</p>
+                        ))}
+                        {whyData.youtubeVideo && (
+                            <a className="reel" href={"https://youtu.be/" + whyData.youtubeVideo} target="_blank" rel="noopener noreferrer">
+                                <img src={"https://img.youtube.com/vi/" + whyData.youtubeVideo + "/hqdefault.jpg"} alt="Reel institucional DK Laserman: shows láser en fiestas nacionales de Argentina" width="480" height="360" loading="lazy" />
+                                <span className="play"><i></i></span>
+                                <span className="cap">Reel institucional</span>
+                            </a>
+                        )}
+                    </div>
+                    <div>
+                        <p className="label" style={{ marginTop: 0, marginBottom: '14px' }}>{whyData.benefitsTitle}</p>
+                        {whyData.benefits.map((b, i) => (
+                            <div className="benefit" key={i}>
+                                <span className="n">{String(i + 1).padStart(2, '0')}</span>
+                                <div>
+                                    <p className="t" style={{ margin: 0 }}>{b.title}</p>
+                                    <p className="d" style={{ margin: 0 }}>{b.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                        <p className="prose" style={{ fontSize: '0.88rem', marginTop: '26px' }}>{whyData.closingParagraph}</p>
+                        <p className="combo" style={{ margin: '26px 0 0' }}>{whyData.highlight}</p>
+                    </div>
+                </section>
+            );
+        };
+
+        /* ── Antecedentes ── */
+        const TrackRecord = ({ festivalsData }) => {
+            const ref = useReveal();
+            return (
+                <section ref={ref} className="reveal record">
+                    <div className="record-list">
+                        {festivalsData.items.map((f, i) => (
+                            <div className="rec" key={i}>
+                                <span className="nm">{f.name}</span>
+                                <span className="dots"></span>
+                                <span className="lc">{f.location}</span>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            );
+        };
+
+        /* ── Condiciones + contacto ── */
+        const Terms = ({ footerData }) => {
+            const ref = useReveal();
+            const contact = [
+                { k: 'Nombre', v: footerData.contact.name, href: null },
+                { k: 'Teléfono', v: footerData.contact.phone, href: 'tel:' + footerData.contact.phone.replace(/\s/g, '') },
+                { k: 'Email', v: footerData.contact.email, href: 'mailto:' + footerData.contact.email },
+                { k: 'Web', v: footerData.contact.web, href: 'https://' + footerData.contact.web }
+            ];
+            return (
+                <section ref={ref} className="reveal terms">
+                    <div>
+                        <p className="label" style={{ marginTop: 0, marginBottom: '16px' }}>{footerData.conditions.title}</p>
+                        {footerData.conditions.items.map((item, i) => (
+                            <div className="term" key={i}>
+                                <span className="n">{String(i + 1).padStart(2, '0')}</span>
+                                <span>{item}</span>
+                            </div>
+                        ))}
+                    </div>
+                    <div>
+                        <p className="label" style={{ marginTop: 0, marginBottom: '16px' }}>{footerData.contact.title}</p>
+                        {contact.map((c, i) => (
+                            <div className="contact-row" key={i}>
+                                <span className="k">{c.k}</span>
+                                {c.href
+                                    ? <a className="v" href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">{c.v}</a>
+                                    : <span className="v">{c.v}</span>}
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            );
+        };
+
+        /* ── Cierre ── */
+        const Closing = ({ footerData, quoteDetails }) => {
+            const ref = useReveal();
+            return (
+                <footer ref={ref} className="reveal closing">
+                    <img src={LOGO} alt="DK Laserman Pro" width="164" height="150" loading="lazy" />
+                    <p>{footerData.tagline}</p>
+                    <p className="sig">{quoteDetails.id} · {footerData.contact.web}</p>
+                </footer>
+            );
+        };
+
+        /* ── WhatsApp ── */
+        const WhatsApp = () => {
+            const msg = encodeURIComponent("Hola Nicolás, vi la propuesta y quiero saber cómo podemos llevar LASERMAN a nuestro evento.");
+            return (
+                <a className="wa" href={`https://wa.me/5492995920418?text=${msg}`} target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+                    <span>Quiero esta experiencia</span>
+                </a>
+            );
+        };
+
+        /* ── Franja de show entre secciones: los haces se ven enteros ── */
+        const Band = ({ k, children }) => {
+            const ref = useReveal();
+            return (
+                <section ref={ref} className="reveal band">
+                    <p className="k">{k}</p>
+                    <p className="t">{children}</p>
+                </section>
+            );
+        };
+
+        /* ── App ── */
+        const App = () => (
+            <React.Fragment>
+                <LaserRig />
+                <Masthead quoteDetails={QUOTE_DATA.quoteDetails} />
+                <WhatsApp />
+                <div className="shell">
+                    <Hero heroData={QUOTE_DATA.hero} quoteDetails={QUOTE_DATA.quoteDetails} />
+
+                    <div className="panel">
+                        <SpecSheet clientInfo={QUOTE_DATA.clientInfo} />
+                        <main>
+                            <SectionHead idx="A" title="Propuesta de servicios" count={QUOTE_DATA.services.length + " ítems"} />
+                            {QUOTE_DATA.services.map((s, i) => <Item key={s.id} service={s} delay={i * 60} />)}
+                        </main>
+                    </div>
+
+                    <Band k="La noche">
+                        Nadie va a poder explicar <em>lo que vio</em>
+                    </Band>
+
+                    <div className="panel">
+                        <SectionHead idx="B" title="Traslado" count="Neuquén → Destino" />
+                        <Logistics data={QUOTE_DATA.transport} />
+
+                        <SectionHead idx="C" title="Fundamentos" count="Por qué LASERMAN" />
+                        <Argument whyData={QUOTE_DATA.whyChooseUs} />
+                    </div>
+
+                    <Band k="La prueba">
+                        Ocho fiestas nacionales. <em>Ninguna lo olvidó</em>
+                    </Band>
+
+                    <div className="panel">
+                        <SectionHead idx="D" title={QUOTE_DATA.festivals.title} count={QUOTE_DATA.festivals.items.length + " fiestas nacionales"} />
+                        <TrackRecord festivalsData={QUOTE_DATA.festivals} />
+
+                        <SectionHead idx="E" title="Condiciones y contacto" count="Validez 15 días" />
+                        <Terms footerData={QUOTE_DATA.footer} />
+                    </div>
+
+                    <Band k="El legado">
+                        Que la próxima fiesta <em>tenga que superar esta</em>
+                    </Band>
+
+                    <Closing footerData={QUOTE_DATA.footer} quoteDetails={QUOTE_DATA.quoteDetails} />
+                </div>
+            </React.Fragment>
+        );
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+    <script>
+    (function () {
+        var bar = document.getElementById('progress');
+        var ticking = false;
+        function update() {
+            var h = document.documentElement.scrollHeight - window.innerHeight;
+            var p = h > 0 ? (window.scrollY / h) * 100 : 0;
+            bar.style.width = Math.min(p, 100) + '%';
+            ticking = false;
+        }
+        window.addEventListener('scroll', function () {
+            if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
+        }, { passive: true });
+        update();
+    })();
+    </script>
+</body>
+</html>
