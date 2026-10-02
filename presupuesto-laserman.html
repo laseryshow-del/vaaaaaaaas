@@ -1373,24 +1373,7 @@
 
                     <div className="panel">
                         <SpecSheet clientInfo={QUOTE_DATA.clientInfo} />
-                        <main>
-                            <SectionHead idx="A" title="Propuesta de servicios" count={QUOTE_DATA.services.length + " ítems"} />
-                            {QUOTE_DATA.services.map((s, i) => <Item key={s.id} service={s} delay={i * 60} />)}
-                            <div className="included">
-                                <span className="label">Servicio llave en mano</span>
-                                <p>Nos ocupamos de todo: diseño a medida del evento, traslado del equipo, montaje, operación en vivo durante la noche y desmontaje. <strong>Traslado, combustible y estadía sin cargo</strong>, a cualquier punto del país — el valor de cada ítem es el valor final.</p>
-                                <p>Del lado de la organización solo hacen falta dos cosas: <strong>energía en el lugar</strong> (una toma de 220 V con puesta a tierra o el grupo electrógeno del evento, lo mismo que consume la iluminación del escenario) y el <strong>espacio de montaje</strong>, que definimos juntos en el relevamiento previo.</p>
-                                <p>Sin pirotecnia, sin estruendos y sin residuos: al otro día el predio queda exactamente como estaba.</p>
-                            </div>
-                        </main>
-                    </div>
-
-                    <Band k="La noche">
-                        Nadie va a poder explicar <em>lo que vio</em>
-                    </Band>
-
-                    <div className="panel">
-                        <SectionHead idx="B" title="Fundamentos" count="Por qué LASERMAN" />
+                        <SectionHead idx="A" title="Quiénes somos" count="15 años en escenarios" />
                         <Argument whyData={QUOTE_DATA.whyChooseUs} />
                     </div>
 
@@ -1399,16 +1382,35 @@
                     </Band>
 
                     <div className="panel">
-                        <SectionHead idx="C" title={QUOTE_DATA.festivals.title} count={QUOTE_DATA.festivals.items.length + " fiestas nacionales"} />
+                        <SectionHead idx="B" title={QUOTE_DATA.festivals.title} count={QUOTE_DATA.festivals.items.length + " fiestas nacionales"} />
                         <TrackRecord festivalsData={QUOTE_DATA.festivals} />
+                    </div>
 
-                        <SectionHead idx="D" title="Condiciones y contacto" count="Validez 15 días" />
-                        <Terms footerData={QUOTE_DATA.footer} />
+                    <Band k="La noche">
+                        Nadie va a poder explicar <em>lo que vio</em>
+                    </Band>
+
+                    <div className="panel">
+                        <main>
+                            <SectionHead idx="C" title="Propuesta de servicios" count={QUOTE_DATA.services.length + " ítems"} />
+                            {QUOTE_DATA.services.map((s, i) => <Item key={s.id} service={s} delay={i * 60} />)}
+                            <div className="included">
+                                <span className="label">Qué incluye cada servicio</span>
+                                <p>Diseño a medida del evento, traslado del equipo, montaje, operación en vivo durante toda la noche y desmontaje. <strong>El traslado, el combustible y la estadía van sin cargo</strong>, a cualquier punto del país: el valor de cada ítem es el valor final.</p>
+                                <p>De parte de la organización solo hacen falta dos cosas: <strong>energía en el lugar</strong> — la misma que usa la iluminación del escenario — y el <strong>espacio de montaje</strong>, que definimos juntos en el relevamiento previo.</p>
+                                <p>Sin pirotecnia, sin estruendos y sin residuos: al otro día el predio queda exactamente como estaba.</p>
+                            </div>
+                        </main>
                     </div>
 
                     <Band k="El legado">
                         Que la próxima fiesta <em>tenga que superar esta</em>
                     </Band>
+
+                    <div className="panel">
+                        <SectionHead idx="D" title="Condiciones y contacto" count="Validez 15 días" />
+                        <Terms footerData={QUOTE_DATA.footer} />
+                    </div>
 
                     <Closing footerData={QUOTE_DATA.footer} quoteDetails={QUOTE_DATA.quoteDetails} />
                 </div>
