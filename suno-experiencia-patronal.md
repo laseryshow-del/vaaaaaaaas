@@ -82,3 +82,32 @@ Ooooo…
 - "que se quede como está" quedó fuera (parecía nota); agregarlo antes del HARD CUT si es letra.
 - Si Suno lee los corchetes como letra, usar paréntesis o quitar efectos menores.
 - Generar varias versiones; para golpes exactos, agregar los impactos en un editor de audio.
+
+## Versión 15 segundos
+Style: agregar `15 seconds, short, tight` al estilo. Duración objetivo: 15 s.
+
+```
+[VOZ MASCULINA GRAVE. HABLADA. RÁPIDA. FIRME. SIN GRITAR. SIN CANTAR.]
+
+[REVERSE SWELL 1 s]
+Nadie lo había hecho.
+[DEEP BOOM tardío]
+
+San Miguel de Tucumán. Fiesta Patronal.
+[HIT tardío]
+
+Y de repente… G-g-g-gigante.
+[MASSIVE DROP tardío]
+
+Sobre su iglesia. Por primera vez… con láser.
+[LASER SWEEP + HIT tardío]
+
+Fue historia.
+[SILENCIO 0.5 s]
+
+Experiencia Patronal. LASERMAN.
+[FINAL DROP + REVERB corto]
+[HARD CUT]
+```
+
+Tiempos aprox.: 0-2 s gancho · 2-5 s lugar · 5-8 s gigante · 8-11 s láser · 11-12 s historia · 12-15 s cierre.
