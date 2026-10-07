@@ -1,4 +1,4 @@
-# 5 SPOTS — 15 SEGUNDOS — Catedral / Virgen de la Merced (estructura con golpes + final con impactos en silencio)
+# 5 SPOTS — 15 SEGUNDOS — Catedral / Virgen de la Merced (v2: frase + impacto, uno por uno)
 
 Style (para todos): spoken word, deep male voice, fast, firm, cinematic trailer, sub bass, hard hits, reverse swell, glitch, laser sweeps, impacts in silence, dry voice-over, 15 seconds, tight
 
@@ -6,14 +6,13 @@ Style (para todos): spoken word, deep male voice, fast, firm, cinematic trailer,
 ```
 [Deep Boom + silencio corto]
 ¡Tucumán!
-[HIT seco] [Granular Vocal Stutter]
+[HIT seco]
 ¡La Virgen de la Merced… sobre su propia Catedral!
-[Tape Stop + Heavy Bass Hit]
+[Heavy Bass Hit]
 ¡Por primera vez!
-[Massive Drop] [Laser sweep]
-¡Fe! [HIT] ¡Láser monumental!
-[Build acelerado + hits consecutivos]
-[CIERRE FUERTE: HIT + REVERSE CUT]
+[Tape Stop + IMPACTO]
+¡Láser monumental!
+[MASSIVE DROP + Laser sweep]
 [SILENCIO TOTAL — solo voz en off, seca, sin música]
 Experiencia Patronal.
 [IMPACTO EN EL SILENCIO]
@@ -30,15 +29,15 @@ Ooooo… que se quede como está.
 ```
 [Reverse hit + silencio corto]
 ¡La Catedral de Tucumán!
-[HIT seco] [Chopped Vocal Glitch]
+[IMPACTO]
 ¡No fue decoración!
-[Tape Stop + Heavy Bass Hit]
+[Heavy Bass Hit]
 ¡Fue historia!
-[Massive Drop] [Laser sweep]
-¡La Virgen de la Merced! [HIT]
+[IMPACTO metálico]
+¡La Virgen de la Merced!
+[HIT]
 ¡Proyectada con láser!
-[Build acelerado + hits consecutivos]
-[CIERRE FUERTE: HIT + REVERSE CUT]
+[MASSIVE DROP + Laser sweep]
 [SILENCIO TOTAL — solo voz en off, seca, sin música]
 Experiencia Patronal.
 [IMPACTO EN EL SILENCIO]
@@ -53,17 +52,17 @@ Ooooo… que se quede como está.
 
 ### SPOT 03 — UNA IMAGEN QUE QUEDA
 ```
-[Sub-bass + Deep Boom]
+[Sub-bass + Deep Boom + silencio corto]
 ¡Una noche patronal!
-[HIT seco] [Rapid Vocal Retrigger]
+[HIT seco]
 ¡Miles mirando!
-[Quick Stop + Heavy Bass Hit]
+[Rapid Retrigger + IMPACTO]
 ¡Una imagen imposible de olvidar!
-[Massive Drop] [Laser sweep]
-¡La Virgen! [HIT] ¡La Catedral! [HIT]
+[Heavy Bass Hit]
+¡La Virgen! ¡La Catedral!
+[IMPACTO metálico]
 ¡La historia dibujada con láser!
-[Build acelerado + hits consecutivos]
-[CIERRE FUERTE: HIT + REVERSE CUT]
+[MASSIVE DROP + Laser sweep]
 [SILENCIO TOTAL — solo voz en off, seca, sin música]
 Experiencia Patronal.
 [IMPACTO EN EL SILENCIO]
@@ -78,16 +77,17 @@ Ooooo… que se quede como está.
 
 ### SPOT 04 — BELGRANO Y LA VIRGEN
 ```
-[Deep Boom]
+[Deep Boom + silencio corto]
 ¡Tucumán tiene historia!
-[HIT seco] [Micro-Loop Vocal Stutter]
-¡Belgrano! [HIT] ¡La Virgen de la Merced!
-[Tape Stop + Heavy Bass Hit]
+[HIT seco]
+¡Belgrano!
+[IMPACTO]
+¡La Virgen de la Merced!
+[Heavy Bass Hit]
 ¡La historia volvió sobre la Catedral!
-[Massive Drop] [Laser sweep]
-¡Luz! [HIT] ¡Memoria! [HIT] ¡Láser!
-[Build acelerado + hits consecutivos]
-[CIERRE FUERTE: HIT + REVERSE CUT]
+[Tape Stop + IMPACTO]
+¡Luz! ¡Memoria! ¡Láser!
+[MASSIVE DROP + Laser sweep]
 [SILENCIO TOTAL — solo voz en off, seca, sin música]
 Experiencia Patronal.
 [IMPACTO EN EL SILENCIO]
@@ -102,17 +102,17 @@ Ooooo… que se quede como está.
 
 ### SPOT 05 — LA PATRONAL CAMBIÓ DE ESCALA
 ```
-[Glitch + Deep Boom]
+[Glitch + Deep Boom + silencio corto]
 ¡Fiesta Patronal!
-[HIT seco] [Digital Vocal Repeat]
+[HIT seco]
 ¿Otra vez como siempre?
-[Tape Stop + Heavy Bass Hit]
+[Tape Stop + IMPACTO]
 ¡Esta vez la historia se proyectó!
-[Massive Drop] [Laser sweep]
-¡Virgen de la Merced! [HIT] ¡Catedral! [HIT]
+[Heavy Bass Hit]
+¡Virgen de la Merced! ¡Catedral!
+[IMPACTO metálico]
 ¡Láser monumental!
-[Build acelerado + hits consecutivos]
-[CIERRE FUERTE: HIT + REVERSE CUT]
+[MASSIVE DROP + Laser sweep]
 [SILENCIO TOTAL — solo voz en off, seca, sin música]
 Experiencia Patronal.
 [IMPACTO EN EL SILENCIO]
