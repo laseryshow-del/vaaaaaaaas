@@ -1,6 +1,6 @@
 # 5 SPOTS — 15 SEGUNDOS — Catedral / Virgen de la Merced (v2: frase + impacto, uno por uno)
 
-Style (para todos): spoken word, deep male voice, fast, firm, cinematic trailer, sub bass, hard hits, reverse swell, glitch, laser sweeps, impacts in silence, dry voice-over, 15 seconds, tight
+Style (para todos): spoken word, deep male voice, fast, firm, cinematic trailer, sub bass, hard hits, reverse swell, glitch, laser sweeps, dry hard hits in silence, dry voice-over, no reverb tail, 15 seconds, tight
 
 ### SPOT 01 — LA HISTORIA SE ENCIENDE
 ```
@@ -15,14 +15,14 @@ Style (para todos): spoken word, deep male voice, fast, firm, cinematic trailer,
 [MASSIVE DROP + Laser sweep]
 [SILENCIO TOTAL — solo voz en off, seca, sin música]
 Experiencia Patronal.
-[IMPACTO EN EL SILENCIO]
+[GOLPE SECO] [GOLPE SECO]
 [silencio — solo voz en off]
 Experiencia Laserman.
-[IMPACTO EN EL SILENCIO + sub drop]
+[GOLPE SECO] [GOLPE SECO]
 [silencio — solo voz en off]
 Ooooo… que se quede como está.
-[MASSIVE FINAL IMPACT + REVERB]
-[HARD CUT]
+[GOLPE SECO FINAL, sin reverb ni cola]
+[HARD CUT — termina ahí]
 ```
 
 ### SPOT 02 — NO FUE DECORACIÓN
@@ -40,14 +40,14 @@ Ooooo… que se quede como está.
 [MASSIVE DROP + Laser sweep]
 [SILENCIO TOTAL — solo voz en off, seca, sin música]
 Experiencia Patronal.
-[IMPACTO EN EL SILENCIO]
+[GOLPE SECO] [GOLPE SECO]
 [silencio — solo voz en off]
 Experiencia Laserman.
-[IMPACTO EN EL SILENCIO + sub drop]
+[GOLPE SECO] [GOLPE SECO]
 [silencio — solo voz en off]
 Ooooo… que se quede como está.
-[MASSIVE FINAL IMPACT + REVERB]
-[HARD CUT]
+[GOLPE SECO FINAL, sin reverb ni cola]
+[HARD CUT — termina ahí]
 ```
 
 ### SPOT 03 — UNA IMAGEN QUE QUEDA
@@ -65,14 +65,14 @@ Ooooo… que se quede como está.
 [MASSIVE DROP + Laser sweep]
 [SILENCIO TOTAL — solo voz en off, seca, sin música]
 Experiencia Patronal.
-[IMPACTO EN EL SILENCIO]
+[GOLPE SECO] [GOLPE SECO]
 [silencio — solo voz en off]
 Experiencia Laserman.
-[IMPACTO EN EL SILENCIO + sub drop]
+[GOLPE SECO] [GOLPE SECO]
 [silencio — solo voz en off]
 Ooooo… que se quede como está.
-[MASSIVE FINAL IMPACT + REVERB]
-[HARD CUT]
+[GOLPE SECO FINAL, sin reverb ni cola]
+[HARD CUT — termina ahí]
 ```
 
 ### SPOT 04 — BELGRANO Y LA VIRGEN
@@ -90,14 +90,14 @@ Ooooo… que se quede como está.
 [MASSIVE DROP + Laser sweep]
 [SILENCIO TOTAL — solo voz en off, seca, sin música]
 Experiencia Patronal.
-[IMPACTO EN EL SILENCIO]
+[GOLPE SECO] [GOLPE SECO]
 [silencio — solo voz en off]
 Experiencia Laserman.
-[IMPACTO EN EL SILENCIO + sub drop]
+[GOLPE SECO] [GOLPE SECO]
 [silencio — solo voz en off]
 Ooooo… que se quede como está.
-[MASSIVE FINAL IMPACT + REVERB]
-[HARD CUT]
+[GOLPE SECO FINAL, sin reverb ni cola]
+[HARD CUT — termina ahí]
 ```
 
 ### SPOT 05 — LA PATRONAL CAMBIÓ DE ESCALA
@@ -115,12 +115,12 @@ Ooooo… que se quede como está.
 [MASSIVE DROP + Laser sweep]
 [SILENCIO TOTAL — solo voz en off, seca, sin música]
 Experiencia Patronal.
-[IMPACTO EN EL SILENCIO]
+[GOLPE SECO] [GOLPE SECO]
 [silencio — solo voz en off]
 Experiencia Laserman.
-[IMPACTO EN EL SILENCIO + sub drop]
+[GOLPE SECO] [GOLPE SECO]
 [silencio — solo voz en off]
 Ooooo… que se quede como está.
-[MASSIVE FINAL IMPACT + REVERB]
-[HARD CUT]
+[GOLPE SECO FINAL, sin reverb ni cola]
+[HARD CUT — termina ahí]
 ```
